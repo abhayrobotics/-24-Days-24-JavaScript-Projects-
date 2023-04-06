@@ -10,21 +10,28 @@
 <body>
    <section>
     <div class="clock__outerwall">
-        <div class="clock innerwall">
+        <div class="clock_innerwall">
             <div class="clock">
                 <div class="time">
-                    13:13
+                    <!-- 13:13 -->
+                    <div class="minutes">
+                        <input type="number" name="minutes" id="minutes" value="13" >
+                    </div>
+                    <div class="colon">:</div>
+                    <div class="sec">
+                        <input type="number" name="sec" id="sec" value="13" >
+                    </div>
                 </div>
                 <div class="hr"><hr><hr></div>
                 <div class="text">Start</div>
                 
-               <div class="setting"><img src="./asset/gear.svg" alt=""></div>
+               <div class="setting" id=" setting" onclick="ChangeTime()"><img src="./asset/gear.svg" alt=""></div>
 
             </div>
         </div>
     </div>
    </section>
     
-    <script src="/pomodoro.js" type="js"></script>
+    <script src="./pomodoro.js" type="text/javascript" ></script>
 </body>
 </html>
