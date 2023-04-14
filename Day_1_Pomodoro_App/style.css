@@ -73,7 +73,7 @@ section {
 input{
     display: block;
     font-weight: 300;
-    font-size:70px;
+    font-size:65px;
     width:85px;
     outline: none;
     border: none;
@@ -92,7 +92,7 @@ hr{
     position: relative;
     top: 0px;
     display: inline-block;
-    width: 65px;
+    width: 80px;
     height: 1px;
     margin:  0 5px;
     outline: none;
