@@ -2,6 +2,8 @@ let setting = document.getElementById('setting');
 let minutes = document.getElementById('minutes');
 let sec = document.getElementById('sec');
 
+// global running status
+let running_flag = true;
 // 
 function ChangeTime() {
     // console.log("start")
@@ -13,40 +15,48 @@ function ChangeTime() {
 
 function StartTimer() {
     // disable editing
-    
     ChangeTime();
 
-    // change color to default 
+    // changing text 
+    document.getElementById('start').classList.toggle('hidden');
+    document.getElementById('pause').classList.toggle('hidden');
+
+    // disable chaning time
+    // setting.style.pointerEvents = "none";
+    // changing running flag back to normal for restarting operataion
+    running_flag = true;
+
+    // change color to defaults
     let r = document.querySelector(":root");
     r.style.setProperty('--clock-color', '#46e646');
 
-    let text = document.getElementById("text")
-    if (text.innerText == "START") {
 
-        let varsec = parseInt(document.getElementById('sec').value);
-        let varmin = parseInt(document.getElementById('minutes').value);
+    let varsec = parseInt(document.getElementById('sec').value);
+    let varmin = parseInt(document.getElementById('minutes').value);
 
-        text.innerText = "Pause";
-        const timer = setInterval(() => {
+    // Counter ;
+    const timer = setInterval(() => {
+
+        // running flaf =true
+        if (running_flag) {
 
             // if time left to count then run
             if (varsec > 0 || varmin > 0) {
-                
+
                 // decrease min if sec =0
                 if (varmin > 0 && varsec == 0) {
                     varsec = 59;
                     varmin--;
                     document.getElementById('sec').value = 59;
                     document.getElementById('minutes').value--;
-
                 }
+
                 // decrease sec if >0
-                else if ( varsec > 0) {
+                else if (varsec > 0) {
                     varsec--;
                     document.getElementById('sec').value--;
-
                 }
-             
+
                 //   adding zero Pad before the number
                 document.getElementById('sec').value = document.getElementById('sec').value.padStart(2, "0");
                 document.getElementById('minutes').value = document.getElementById('minutes').value.padStart(2, "0");
@@ -60,13 +70,29 @@ function StartTimer() {
                 ChangeTime();
                 alert("Times Up!");
                 clearInterval(timer);
-                text.innerText = "Start"
+
+                // changing text 
+                document.getElementById('start').classList.toggle('hidden');
+                document.getElementById('pause').classList.toggle('hidden');
             }
-        }, 1000)
-        // console.log("start")
-    }
-    else if (text.innerText == "PAUSE") {
-        text.innerText = "Start";
-        // console.log("Pause");
-    }
+        }
+        else {
+            clearInterval(timer);
+            console.log("stopped", document.getElementById('sec').value);
+
+            // changing running flag back to normal for restarting operataion
+            running_flag = true;
+            // changing text 
+            document.getElementById('start').classList.toggle('hidden');
+            document.getElementById('pause').classList.toggle('hidden');
+
+            // changing color 
+            let r = document.querySelector(":root");
+            r.style.setProperty('--clock-color', '#dfdb12');
+        }
+    }, 1000)
+
+}
+function PauseTimer() {
+    running_flag = false;
 }

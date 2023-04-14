@@ -4,6 +4,7 @@
     --bg-color: #252427;
     --clock-color: #46e646;
     --color-2:  #7f7f80;
+    --highlight: #fff;
 }
 
 * {
@@ -65,7 +66,7 @@ section {
     /* width: 20px; */
     font-size:70px;
     /* line-height: 20px; */
-    color: #fff;
+    color: #ffffff;
     font-weight: 300;
     text-shadow: #fff;
     /* border: 1px solid red; */
@@ -109,6 +110,14 @@ hr{
    cursor: pointer;
    /* border: 1px solid red; */
 }
+.text:hover{
+    color: var(--highlight);
+    transition-duration: 0.3s;
+
+}
+.hidden{
+    display:none ;
+}
 .setting{
     /* color: var(--color-2); */
     opacity: 0.5;
@@ -116,4 +125,10 @@ hr{
    text-align: center;
    /* margin: 10px; */
    cursor: pointer;
+   pointer-events:auto;
+}
+.setting:hover{
+    filter: sepia(100%) saturate(6481%) hue-rotate(246deg) brightness(102%) contrast(143%);
+    transform:   scale(0.8);
+    transition-duration: 0.2s;
 }
