@@ -145,8 +145,11 @@ footer{
     border-radius: 10px 0 0 0;
     
 }
-.home{
+footer a{
+
     text-decoration: none;
+}
+.home{
     color: #ada4a4;
 }
 footer:hover .home{
