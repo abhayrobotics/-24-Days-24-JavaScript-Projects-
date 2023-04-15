@@ -132,3 +132,23 @@ hr{
     transform:   scale(0.8);
     transition-duration: 0.2s;
 }
+
+/* footer */
+footer{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(58, 55, 55);
+    padding: 3px 0 0 5px;
+    /* border-radius: 5px 0 0 0; */
+    border-radius: 10px 0 0 0;
+    
+}
+.home{
+    text-decoration: none;
+    color: #ada4a4;
+}
+footer:hover .home{
+    color: #fff;
+}
