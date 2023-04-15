@@ -144,20 +144,27 @@ body{
 .button{
     background-color: var(--purple);
     color: var(--white);
-    width: fit-content;
+    width: 110px;
     padding: 3px 20px ;
     border-radius: 20px;
     font-size: 14px;
     cursor: pointer;
 }
 /* ***********************cart *****************/
+.cart{
+    overflow: scroll;
+    overflow-x: hidden;
+    /* height: 90%; */
 
+}
 .breakup{
     display: flex;
-    /* flex-direction: column; */
+    flex-direction:column;
+    transition-duration: 0.5s;
 }
-.french{
+.dish{
     display: flex;
+    margin: 10px 0;
 }
 .cursor{
     padding: 5px 8px;
@@ -172,7 +179,7 @@ body{
     width: 70%;
 }
 .bill{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     /* width: fit-content; */
 }
 .right-align{
