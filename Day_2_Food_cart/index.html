@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Cart</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -24,23 +27,119 @@
                 <div class="menu__heading">
                     <h3 class="text__big">To Go Menu</h3>
                 </div>
-                <div class="menu__item">
+
+                <div class="menu__item blue">
                     <div class="img">
                         <img src="./asset/plate__french-fries.png" alt="">
                     </div>
                     <div class="item__details">
                         <h3 class="text__small">French Fries with Ketchup</h3>
-                        <h2> ₹ 223.50</h2>
-                        <div class="button">Add to cart</div>
+                        <h2> ₹ 110.50</h2>
+                        <div class="button" onclick="AddCart(french)">Add to cart</div>
                     </div>
 
                 </div>
 
+                <div class="menu__item pink">
+                    <div class="img">
+                        <img src="./asset/plate__salmon-vegetables.png" alt="">
+                    </div>
+                    <div class="item__details">
+                        <h3 class="text__small">Salmon and Vegetables</h3>
+                        <h2> ₹ 195.50</h2>
+                        <div class="button" onclick="French()">Add to cart</div>
+                    </div>
+
+                </div>
+               
+                <div class="menu__item green">
+                    <div class="img">
+                        <img src="./asset/plate__spaghetti-meat-sauce.png" alt="">
+                    </div>
+                    <div class="item__details">
+                        <h3 class="text__small">Spaghetti Meat & Sauce</h3>
+                        <h2> ₹ 250.00</h2>
+                        <div class="button" onclick="French()">Add to cart</div>
+                    </div>
+
+                </div>
+
+                <div class="menu__item blue">
+                    <div class="img">
+                        <img src="./asset/plate__chicken-salad.png" alt="">
+                    </div>
+                    <div class="item__details">
+                        <h3 class="text__small">Chicken Salad</h3>
+                        <h2> ₹ 215.00</h2>
+                        <div class="button" onclick="French()">Add to cart</div>
+                    </div>
+
+                </div>
+                <div class="menu__item pink">
+                    <div class="img">
+                        <img src="./asset/plate__bacon-eggs.png" alt="">
+                    </div>
+                    <div class="item__details">
+                        <h3 class="text__small">Bacon Eggs</h3>
+                        <h2> ₹ 200.00</h2>
+                        <div class="button" onclick="French()">Add to cart</div>
+                    </div>
+
+                </div>
+                <div class="menu__item green">
+                    <div class="img">
+                        <img src="./asset/plate__fish-sticks-fries.png" alt="">
+                    </div>
+                    <div class="item__details">
+                        <h3 class="text__small">Fish Sticks Fries</h3>
+                        <h2> ₹ 420.00</h2>
+                        <div class="button" onclick="French()">Add to cart</div>
+                    </div>
+
+                </div>
+                <div class="menu__item blue">
+                    <div class="img">
+                        <img src="./asset/plate__ravioli.png" alt="">
+                    </div>
+                    <div class="item__details">
+                        <h3 class="text__small">Ravioli</h3>
+                        <h2> ₹ 315.00</h2>
+                        <div class="button" onclick="French()">Add to cart</div>
+                    </div>
+
+                </div>
             </div>
             <div class="cart card">
 
                 <div class="menu__heading">
                     <h3 class="text__big">Your Cart</h3>
+                </div>
+                <hr>
+
+                <div class="breakup">
+                    <div class="french">
+                        <div class="img"><img src="./asset/plate__french-fries.png" alt=""></div>
+
+                        <div class="item__name">
+                            <h3 class="text__small">French Fries with Ketchup</h3>
+                            <h3  class="text__small"> ₹ 110.50</h3>
+                            <span>
+                                <i class="fa-solid fa-chevron-left cursor"> </i>
+                                <span class="counter">  0  </span>
+                                <i class="fa-solid fa-chevron-right cursor"></i>
+                                <span class="text__big"> ₹ 0.00</span>
+                            </span>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bill">
+                    <div class="text__small right-align">Subtotal:<span id="subtotal" class="text__big">₹ 0.00</span>
+                    </div>
+                    <div class="text__small  right-align">GST:<span id="gst" class="text__big"> ₹ 0.00</span> </div>
+                    <div class="text__small right-align">Total:<span id="Total" class="text__big">₹ 0.00</span></div>
                 </div>
 
 
