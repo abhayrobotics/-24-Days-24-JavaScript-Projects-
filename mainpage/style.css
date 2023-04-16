@@ -124,6 +124,9 @@ overflow: hidden;
     .heading h2{
         font-size: 24px;
     }
+    .card{
+        /* height: 80vh; */
+    }
     .card:hover{
         transform: translateY(-8px)  scale(1.05);
         
