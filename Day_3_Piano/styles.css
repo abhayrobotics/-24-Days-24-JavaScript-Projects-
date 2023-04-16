@@ -10,17 +10,17 @@ body {
   background: #37B2C3;
   overflow: hidden;
   border: 1px solid black;
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  bottom: 0;
+  bottom: 0; */
 }
 .section{
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  height: 100vh;
-  border: 1px solid red;
+  height: 100%;
+  /* border: 1px solid red; */
 }
 .heading{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -34,7 +34,7 @@ body {
   align-items: center;
   justify-content: center;
   align-self: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   
 }
 
@@ -58,7 +58,7 @@ body {
 @media screen and (max-width:500px) {
   body{
     overflow: hidden;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
   }
   .piano{
@@ -78,7 +78,7 @@ footer{
   padding: 3px 0 0 5px;
   /* border-radius: 5px 0 0 0; */
   border-radius: 10px 0 0 0;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   
 }
 footer a{
