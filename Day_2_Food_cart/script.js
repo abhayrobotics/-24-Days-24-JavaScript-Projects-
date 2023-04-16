@@ -128,7 +128,7 @@ function Increase(product){
 
      let total =  cart[product].quantity*cart[product].price;
      console.log(total)
-     document.getElementById(`bill_${product}`).innerText =total;
+     document.getElementById(`bill_${product}`).innerText ="₹ "+total;
 
 
     // console.log(total)
