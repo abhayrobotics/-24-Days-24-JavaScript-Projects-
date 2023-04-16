@@ -8,6 +8,7 @@ html, body{
 body {
   background: #37B2C3;
   overflow: hidden;
+  border: 1px solid black;
 }
 .section{
   display: flex;
@@ -15,6 +16,7 @@ body {
   align-content: center;
   flex-direction: column;
   height: 100vh;
+  border: 1px solid red;
 }
 .heading{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,7 +30,7 @@ body {
   align-items: center;
   justify-content: center;
   align-self: center;
-  /* border: 1px solid red; */
+  border: 1px solid red;
   
 }
 
@@ -72,6 +74,7 @@ footer{
   padding: 3px 0 0 5px;
   /* border-radius: 5px 0 0 0; */
   border-radius: 10px 0 0 0;
+  border: 1px solid red;
   
 }
 footer a{
