@@ -189,3 +189,43 @@ body{
     padding-right: 5px;
 
 }
+/************************************************* Responsive */
+@media screen and (max-width:650px) {
+    body{
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .section{
+        height: 100%;
+    }
+    .cart-window{
+        flex-direction: column;
+    }
+    .card{
+        width: 70%;
+    align-self: center;
+    overflow: hidden;
+    }
+    
+    
+}
+@media screen and (max-width:520px) {
+    .card{
+        width: inherit;
+    }
+}
+@media screen and (max-width:380px) {
+    .menu__item{
+        width: 220px;
+    }
+    .card{
+        width: 265px;
+    }
+}
+@media screen and (max-width:295px) {
+    .menu__item{
+        width: 200px;
+        margin: 20px 15px;
+    }
+    
+}
