@@ -1,13 +1,28 @@
 body {
   background: #37B2C3;
+  /* overflow: hidden; */
 }
-
-.piano {
-  width: 100vw;
+.section{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
   height: 100vh;
+}
+.heading{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 32px;
+}
+.piano {
+ 
+  width: 80vw;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
+  /* border: 1px solid red; */
+  
 }
 
 .white-keys {
@@ -26,3 +41,12 @@ body {
   fill: #f40082;  
 }
 
+/* *************responsive */
+@media screen and (max-width:500px) {
+  
+  .piano{
+    transform: rotate(-90deg);
+    height: 70vw;
+    width: 80vh;
+  }
+}
