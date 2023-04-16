@@ -136,17 +136,17 @@ overflow: hidden;
     .section{
         padding: 15px;
     }
-    .card{
+    /* .card{
         width: 275px;height: 170px;
-    }
+    } */
     .card__text h3{
         font-size: 18px;
     }
 }
-@media screen and (max-width:320px) {
+@media screen and (max-width:350px) {
 
      .card{
-        width: 250px;height: 140px;
+        width: 250px;height: 152px;
     }
     .card__img img{
         width: 250px;
