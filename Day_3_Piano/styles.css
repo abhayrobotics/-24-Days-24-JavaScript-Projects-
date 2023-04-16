@@ -1,9 +1,10 @@
 html, body{
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  height: -webkit-fill-available ;
 }
 body {
   background: #37B2C3;
