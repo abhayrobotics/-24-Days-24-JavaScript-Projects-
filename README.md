@@ -6,3 +6,6 @@
 
 ## Day-2 [Food Cart App](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_2_Food_cart/index.html)
 ![Food Cart](https://user-images.githubusercontent.com/58120166/232305421-4ef501d9-f74d-4b3c-9616-c08c0faa0fb8.png)
+
+## Day-3 [Piano](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_3_Piano/index.html)
+![Piano App](https://user-images.githubusercontent.com/58120166/232318617-8eb642f0-9a8c-4912-97ec-165f8092242c.png)
