@@ -1,30 +1,30 @@
 
-let status1= true;
-if(status1){
-RandomGen()
+let status1 = true;
+if (status1) {
+    RandomGen()
 }
 function RandomGen() {
-    status1= false;
+    status1 = false;
     let arr = document.querySelectorAll(".key");
     // generating random inter no.
-    let random = Math.floor(Math.random() * arr.length);
-    
+    const random = Math.floor(Math.random() * arr.length);
+
     // console.log(arr[random].innerText);
     // highlighting
     arr[random].classList.toggle("jiggle");
 
     // UNDERSTANING THE KEY PRESSSED
-    window.addEventListener('keydown', function (event) {
+    document.addEventListener('keydown', function (event) {
         const key2 = event.key;
-
+        console.log(key2)
         // check the prsesed key 
         if (arr[random].getAttribute("data-key") == key2.toUpperCase()) {
             console.log("correct");
             arr[random].classList.toggle("jiggle");
             RandomGen();
             // setTimeout(RandomGen(),2000)
-            
-        }else {
+
+        } else {
             console.log("wrong");
             console.log("input", event.key);
             console.log("random", arr[random].getAttribute("data-key"));
