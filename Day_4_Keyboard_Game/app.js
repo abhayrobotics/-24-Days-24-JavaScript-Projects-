@@ -21,11 +21,14 @@ function RandomGen() {
         if (arr[random].getAttribute("data-key") == key2.toUpperCase()) {
             console.log("correct");
             arr[random].classList.toggle("jiggle");
+            RandomGen();
+            // setTimeout(RandomGen(),2000)
             
-            setTimeout(RandomGen(),2000)
-            
-        }else{
-            console.log("wrong", key2.toUpperCase());
+        }else {
+            console.log("wrong");
+            console.log("input", event.key);
+            console.log("random", arr[random].getAttribute("data-key"));
+
         }
     })
 
