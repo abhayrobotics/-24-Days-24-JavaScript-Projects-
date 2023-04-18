@@ -9,6 +9,12 @@ body {
   margin: 0;
   padding: 0;
 }
+.score{
+  color: #60C1B6;
+  position: absolute;
+  top:20px;
+  right: 30px;
+}
 
 .keyboard {
   background: #F6F6F6;
