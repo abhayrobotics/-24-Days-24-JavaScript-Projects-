@@ -9,3 +9,7 @@
 
 ## Day-3 [Piano](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_3_Piano/index.html)
 ![Piano App](https://user-images.githubusercontent.com/58120166/232318617-8eb642f0-9a8c-4912-97ec-165f8092242c.png)
+
+## Day-4 [Keyboard Game](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_4_Keyboard_Game/index.html)
+![Keyboard Game](https://user-images.githubusercontent.com/58120166/233170154-671c16d4-44b6-4ff4-a667-74b70bb31ac3.png)
+
