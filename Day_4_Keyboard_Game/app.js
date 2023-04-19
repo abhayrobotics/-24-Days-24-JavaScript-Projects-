@@ -20,16 +20,20 @@ document.addEventListener('keyup', function (event) {
     // check the prsesed key
     const jiggle = document.querySelector(".jiggle");
     if (jiggle.getAttribute("data-key") === key2) {
-       
+        
+        let correct = new Audio('./1.mp3');
+        correct.play();
         jiggle.classList.toggle("jiggle");
         RandomGen();
     }
      else {
-        score = score - 1;
-        console.log("wrong", score, typeof score);
-        sessionStorage.setItem("Score", score);
+        let wrong = new Audio('./2.mp3');
+        wrong.play();
+        // score = score - 1;
+        // console.log("wrong", score, typeof score);
+        // sessionStorage.setItem("Score", score);
 
-        document.getElementById('score').innerText = score
+        // document.getElementById('score').innerText = score
 
     }
 })
