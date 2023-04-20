@@ -51,10 +51,24 @@ html, body{
     display: flex;
     justify-content: space-evenly;
     width: calc(var(--marker-length) + 30px);
-    height: 30px;
+   
     overflow: hidden;
     border: 1px solid red;
 }
+.slider{
+    -webkit-appearance: none;
+    width: calc(var(--marker-length) + 30px);;
+    height: 20px;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+  }
 .interst__line{
     /* position: relative; */
     margin: 15px;

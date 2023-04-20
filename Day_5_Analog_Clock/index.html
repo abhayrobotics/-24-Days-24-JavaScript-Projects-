@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog clock</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section>
+        <div class="clock">
+            <div class="hour">
+                <div class="hr" id="hr">
+
+                </div>
+            </div>
+            <div class="min">
+                <div class="mn" id="mn">
+
+                </div>
+            </div>
+            <div class="sec">
+                <div class="sc" id="sc">
+
+                </div>
+            </div>
+
+        </div>
+
+        <button class="btn" onclick="tick()">
+            Sound  </button>
+       
+    </section>
+
+    <script>
+
+
+        setInterval(() => {
+            
+            let hh = document.getElementById('hr')
+            let mm = document.getElementById('mn')
+            let ss = document.getElementById('sc')
+            
+            
+            let date = new Date
+            const hour = date.getHours() * 30;
+            const min = date.getMinutes() * 6;
+            const sec = date.getSeconds() * 6;
+            
+            // console.log(min)
+            hh.style.transform = `rotateZ(${hour}deg)`;
+            mm.style.transform = `rotateZ(${min}deg)`;
+            ss.style.transform = `rotateZ(${sec}deg)`;
+            
+            
+        }, 1000)
+        
+        var audio = new Audio('tick.mp3');
+        let btn =document.querySelector('.btn')
+        var count = 0;
+        function tick() {
+            count = count + 1;
+            console.log(count % 2)
+            if (count % 2 === 0) {
+                
+                // audio.pause();
+                // audio.volume = 0;
+                // audio.currentTime = 0;
+                location.reload()
+                
+            }
+            else{
+                
+                
+                setInterval(() => {
+                    // audio
+                    audio.play();
+                    // audio.volume = 1;
+                }, 1000)
+                btn.style.color ="#53e253";
+            }
+            
+            
+            
+        }
+        
+        </script>
+
+
+</body>
+
+</html>
