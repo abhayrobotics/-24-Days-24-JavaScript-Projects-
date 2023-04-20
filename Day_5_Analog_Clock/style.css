@@ -141,3 +141,29 @@ section{
 
 
 }
+
+
+
+/* ************************************footer */
+footer{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(58, 55, 55);
+    padding: 3px 0 0 5px;
+    /* border-radius: 5px 0 0 0; */
+    border-radius: 10px 0 0 0;
+    /* border: 1px solid red; */
+    
+  }
+  footer a{
+  
+    text-decoration: none;
+  }
+  .home{
+    color: #ada4a4;
+  }
+  footer:hover .home{
+    color: #fff;
+  }
