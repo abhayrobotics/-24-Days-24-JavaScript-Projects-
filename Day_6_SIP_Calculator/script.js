@@ -1,10 +1,19 @@
-let interest = document.getElementById("InterestRange").oninput = function () {
+let interest = document.getElementById("InterestRange").oninput =function(){
     var value = this.value;
-    const slider = document.getElementsByClassName('slider');
-    console.log( slider.style.background);
-    slider.style.background = `linear-gradient(90deg, var(--slider-color) 80%, var(--text-color) 80%);`;
+    console.log(value);
+    
+   this.style.background = `linear-gradient(90deg, var(--slider-color) ${value}%, var(--text-color) ${value}%);`;
 
     document.getElementById("interest__value").innerText = value + " %";
     // console.log(value_element)
 }
 console.log("checkk")
+let interest2 = document.getElementById("InterestRange2").oninput =function(){
+    var value = this.value;
+    console.log(value);
+    
+   this.style.background = `linear-gradient(90deg, var(--slider-color) ${value}%, var(--text-color) ${value}%);`;
+
+    document.getElementById("interest__value2").innerText = value + " Yr";
+    // console.log(value_element)
+}

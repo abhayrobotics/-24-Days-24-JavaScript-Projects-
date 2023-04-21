@@ -6,7 +6,7 @@
     --slider-color: #42c458;
 
     /* marker */
-    --marker-length:300px;
+    --marker-length:30vw;
     --slider-height: 10px
 }
 *{
@@ -18,7 +18,7 @@
 html, body{
     width: 100%;
     height: -webkit-fill-available;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 .interface{
@@ -32,25 +32,40 @@ html, body{
 .card{
     display: flex;
     background-color: var(--bg-card);
-    width: 50%;
+    width: 50vw;
     height: 50vh;
     margin: 10px;
 }
 .calculator{
-    width: 100%;
-    border: 1px solid red;
+    /* width: 100%; */
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+   
 }
-.interest__tab{
+.component{
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    /* align-items: center; */
+    text-align: left;
+    flex-direction: column;
+    border: 1px solid red;
+    padding: 20px;
 }
-.interest{
+.component__name{
+    color: var(--text-color2);
+    font-size: 16px;
+    padding-bottom: 10px;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+}
+.component__slider{
     position: relative;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
     width: calc(var(--marker-length) + 30px);
    
@@ -68,7 +83,7 @@ html, body{
   border-radius: 10px;
   -webkit-transition: .2s;
   /* transition: opacity .2s */
-  background: linear-gradient(90deg, var(--slider-color) 0%, var(--text-color) 0%);
+  background: linear-gradient(90deg, var(--slider-color) 10%, var(--text-color) 100%);
 }
 
 .slider::-webkit-slider-thumb {
@@ -81,15 +96,13 @@ html, body{
   cursor: pointer;
   overflow: visible;
 }
-.slider:hover {
-    opacity: 1;
-  }
-.slider::-moz-range-thumb { 
-    width: 25px;
-    height: 25px;
-    background: #04AA6D;
-    cursor: pointer;
-  }
 
-
+.range__value{
+    color: var(--text-color);
+    /* border: 1px solid red; */
+    /* width: 60px; */
+    text-align: center;
+    /* padding-left: 0px; */
+    font-size:18px;
+}
 
