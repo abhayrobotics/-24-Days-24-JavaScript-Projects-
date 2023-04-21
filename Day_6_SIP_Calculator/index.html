@@ -13,44 +13,50 @@
     <section class="interface">
         <div class="calculator card">
 
-
-
             <div class="component">
                 <div class="component__name">
                     <h3> Monthly Investment</h3>
-                    <input type="number" name="" id="">
+                    <input type="number" name="principal" placeholder="5000"  value="1000" id="principal">
                 </div>
-                
+
             </div>
 
             <div class="component">
                 <div class="component__name">
                     <h3>Expected Return (%)</h3>
-                    <div id="interest__value" class="range__value">0 %</div>
+                    <div id="interest__value" class="range__value">12 %</div>
                 </div>
                 <div class="component__slider">
-                    <input type="range" min="0" max="50" value="0" class="slider " id="InterestRange">
-                 
+                    <input type="range" min="0" max="50" value="12" class="slider " id="InterestRange">
+
                 </div>
-                
+
             </div>
 
             <div class="component">
                 <div class="component__name">
                     <h3>Time Period (year)</h3>
-                    <div id="interest__value2" class="range__value">0 Yr</div>
+                    <div id="time__value" class="range__value">5 Yr</div>
                 </div>
                 <div class="component__slider">
-                    <input type="range" min="0" max="50" value="0" class="slider " id="InterestRange2">
-                  
+                    <input type="range" min="0" max="50" value="5" class="slider " id="time">
+
                 </div>
-                
+
+            </div>
+
+            <div class="component">
+                <div class="component__name">
+                    <h3> Total Value: <span class="total" id="total"> ₹ 82486</span> </h3>
+
+                </div>
+
             </div>
 
         </div>
-       
-       
-        <div class="card"></div>
+        <div class="card">
+            <!-- <div class="button" onclick="Sip()">Calculate</div> -->
+        </div>
     </section>
 
     <script src="./script.js"></script>
