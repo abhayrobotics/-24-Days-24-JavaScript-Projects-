@@ -3,14 +3,16 @@
     --bg-card:#1e1e1e;
     --text-color:#e1e1e1;
     --text-color2 :#9c9c9c;
+    --slider-color: #42c458;
 
     /* marker */
     --marker-length:300px;
+    --slider-height: 10px
 }
 *{
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     
 }
 html, body{
@@ -52,51 +54,42 @@ html, body{
     justify-content: space-evenly;
     width: calc(var(--marker-length) + 30px);
    
-    overflow: hidden;
-    border: 1px solid red;
+    /* overflow: hidden; */
+    /* border: 1px solid red; */
 }
+
 .slider{
     -webkit-appearance: none;
-    width: calc(var(--marker-length) + 30px);;
-    height: 20px;
+    width: calc(var(--marker-length) + 30px);
+  height: var(--slider-height);
+  /* background: red; */
+  outline: none;
+  transition: 0.1s;
+  border-radius: 10px;
+  -webkit-transition: .2s;
+  /* transition: opacity .2s */
+  background: linear-gradient(90deg, var(--slider-color) 0%, var(--text-color) 0%);
 }
+
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none;
+  appearance: none;
+  width: calc(var(--slider-height) + 15px);
+  height:  calc(var(--slider-height) + 15px);;
+  border-radius: 50%;
+  background: #194ee0;
+  cursor: pointer;
+  overflow: visible;
+}
+.slider:hover {
+    opacity: 1;
+  }
+.slider::-moz-range-thumb { 
     width: 25px;
     height: 25px;
-    border-radius: 50%;
     background: #04AA6D;
     cursor: pointer;
   }
-.interst__line{
-    /* position: relative; */
-    margin: 15px;
-    border-radius: 5px;
-    width: var(--marker-length);
-    height: 5px;
-    background-color: var(--text-color2);
-    /* border: 1px solid red; */
-}
-.interst__line::before{
-    content: "";
-    position: absolute;
-    background-color: #00d09c;
-    width: 50%;
-    height: 5px;
-}
-.rate{
-    color: var(--text-color);
-    padding: 0 5px;
-}
-.marker{
-    position: absolute;
-    top: 8px;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: var(--text-color);
-}
+
 
 
