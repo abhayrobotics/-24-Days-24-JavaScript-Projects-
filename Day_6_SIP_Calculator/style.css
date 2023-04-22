@@ -24,10 +24,12 @@ body {
     height: -webkit-fill-available;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
-html{
+
+html {
     height: -webkit-fill-available;
 }
-.full-calculator{
+
+.full-calculator {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -37,14 +39,28 @@ html{
     background-color: var(--bg-color);
 
 }
+
+.heading {
+    color: var(--text-color);
+    font-size: 35px;
+    padding: 10px;
+    margin-top: 10px;
+    min-height: 50px;
+}
+
 .interface {
     display: flex;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 80vh;
-    
+
+    /* height: 80vh; */
+    /* max-height: 100vw; */
+
+    margin: 10px 20px 0px 20px;
+
+
 }
 
 .card {
@@ -53,11 +69,13 @@ html{
     /* width: 50vw; */
     /* height: 50vh; */
     margin: 10px;
+    padding: 15px;
     overflow: hidden;
     align-content: center;
     justify-content: center;
     align-items: center;
-
+    width: 35%;
+    min-width: 350px;
 }
 
 .calculator {
@@ -67,7 +85,8 @@ html{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    width: 40%;
+    min-width: 350px
 }
 
 .component {
@@ -78,9 +97,11 @@ html{
     text-align: left;
     flex-direction: column;
     /* border: 1px solid red; */
-    padding: 15px  20px;
+    padding: 15px 20px;
+    width: 90%;
 }
-.text{
+
+.text {
     display: flex;
     justify-content: space-evenly;
     /* align-items: center; */
@@ -89,7 +110,8 @@ html{
     flex-direction: column;
     padding: 5px 20px;
 }
-.principal{
+
+.principal {
     outline: none;
     /* background: red; */
     padding: 4px 10px;
@@ -104,11 +126,13 @@ html{
     align-self: center;
     overflow: hidden;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
+
 .component__name {
     color: var(--text-color2);
     font-size: 16px;
@@ -123,7 +147,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: calc(var(--marker-length) + 30px);
+    /* width: calc(var(--marker-length) + 30px); */
 
     /* overflow: hidden; */
     /* border: 1px solid red; */
@@ -131,7 +155,8 @@ input::-webkit-inner-spin-button {
 
 .slider {
     -webkit-appearance: none;
-    width: calc(var(--marker-length) + 30px);
+    /* width: calc(var(--marker-length) + 30px); */
+    width: 100%;
     height: var(--slider-height);
     /* background: red; */
     outline: none;
@@ -169,27 +194,62 @@ input::-webkit-inner-spin-button {
     color: var(--text-color);
     /* width: 500px; */
     min-width: 300px;
-    height: 320px;
+    height: 350px;
     display: flex;
     padding: 0px;
     /* max-width: 35vh; */
     /* border: 1px solid red; */
     overflow: visible;
+    cursor: pointer;
 }
+
 /* ********************barchart */
-.barChart{
-    height: 40vh;
-    height: 300px;
-    width: 500px;
+.barChart {
+    cursor: pointer;
+    /* height: 40vh; */
+    /* height: 300px; */
+    /* min-width: 500px;
+    max-width: 900px;*/
+
+    /* width: 100%; */
 }
-.big-card{
-    width: auto;
+
+.big-card {
+    /* width: auto; */
     /* height: 50vh; */
     display: flex;
+    background-color: var(--bg-card);
+    /* width: 50vw; */
+    /* height: 50vh; */
+    margin: 10px;
+    padding: 15px;
+    overflow: hidden;
+    align-content: center;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    border: 1px solid red;
-    overflow: hidden;
+    width: 80%;
+    min-width: 350px;
+    margin: 10px;
+}
+
+@media screen and (max-width:760px) {
+    .card {
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width:430px) {
+    .calculator {
+        min-width: auto;
+    }
+
+    .card {
+        min-width: auto;
+    }
+
+    .big-card {
+        min-width: auto;
+    }
 
 }

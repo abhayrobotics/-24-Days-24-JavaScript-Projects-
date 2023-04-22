@@ -2,6 +2,7 @@ let x;
 let principal = document.getElementById('principal').oninput = function () {
     x = Sip();
     createChart();
+    createBarChart();
 
 }
 let interest = document.getElementById("InterestRange").oninput = function () {
@@ -14,6 +15,7 @@ let interest = document.getElementById("InterestRange").oninput = function () {
     // console.log(value_element)
     x = Sip();
     createChart();
+    createBarChart();
 }
 
 console.log("checkk")
@@ -28,6 +30,7 @@ let time = document.getElementById("time").oninput = function () {
     x = Sip();
 
     createChart();
+    createBarChart()
 
 }
 
@@ -107,7 +110,7 @@ createBarChart()
 // bar grapgh
 function createBarChart() {
     // destroy old canvas
-    document.getElementById('barChart').innerHTML = `  <canvas class="barChart" id="barChart"></canvas>`;
+    document.getElementById('lineChart').innerHTML = `    <canvas class="barChart" id="barChart"></canvas>`;
 
     x = Sip();
     console.log(x)
@@ -117,17 +120,27 @@ function createBarChart() {
 
     const ctx = document.getElementById('barChart').getContext("2d");
 
-    // for(let i= 1;i<=x[2],i=i=12){
+    // line chart array
+    // let result = principal * ((((1 + i) ** n) - 1) / i) * (1 + i);
+    let label1 =[]
+    let invested = [];
+    let total =[];
+    for(let i= 0;i<=x[2];i=i+12){
+        label1.push(`Year ${i/12}`)
+        invested.push(x[0]*i);
+        let eachYear = x[0] * ((((1 + x[1]) ** i) - 1) / x[1]) * (1 + x[1]);
+        total.push(eachYear)
 
-    // }
-    const labels = [1, 2, 3, 34, 4, 5, 6];
+    }
+    console.log(label1,invested,total)
+    const labels = label1;
     let config = {
         type: 'line',
         data: {
             labels: labels,
             datasets: [{
                 label: 'Amount Invested',
-                data: [65, 59, 80, 81, 56, 55, 40],
+                data: invested,
                 backgroundColor: [
                     'rgba(255, 99, 132, 1)',
                     // 'rgba(255, 159, 64, 1)',
@@ -141,7 +154,7 @@ function createBarChart() {
                 borderWidth: 1
             },{
                 label: 'Total Value',
-                data: [4,34,43,43,31,78 , 55],
+                data: total,
                 backgroundColor: [
                 
                     'rgba(255, 159, 64, 1)',
@@ -163,11 +176,19 @@ function createBarChart() {
             }]
         },
         options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+            layout:{
+                autopadding:true,
+            },
+            plugins: {
+                responsive:true,
+                legend: {
+                    display: true,
+                    labels: {
+                        color: '#fff'
+                    }
                 }
-            }
+            },
+            // responsive:true,
         }
     }
     const mychart = new Chart(ctx, config);

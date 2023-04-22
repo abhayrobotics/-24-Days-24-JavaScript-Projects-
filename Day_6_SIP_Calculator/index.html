@@ -14,7 +14,7 @@
 <body>
     <div class="full-calculator">
 
-
+        <div class="heading">SIP Calculator</div>
         <section class="interface">
             <div class="calculator card">
 
@@ -45,7 +45,7 @@
                         <div id="time__value" class="range__value">5 Yr</div>
                     </div>
                     <div class="component__slider">
-                        <input type="range" min="0" max="50" value="5" class="slider " id="time">
+                        <input type="range" min="0" max="40" value="5" class="slider " id="time">
 
                     </div>
 
@@ -72,10 +72,10 @@
                 <canvas id="piechart" class="piechart"> </canvas>
             </div>
         </section>
-        <section class="big-card card">
+        <section class="big-card " id="lineChart">
             <canvas class="barChart" id="barChart"></canvas>
         </section>
-        
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
