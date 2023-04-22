@@ -13,3 +13,8 @@
 ## Day-4 [Keyboard Game](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_4_Keyboard_Game/index.html)
 ![Keyboard Game](https://user-images.githubusercontent.com/58120166/233170154-671c16d4-44b6-4ff4-a667-74b70bb31ac3.png)
 
+##Day-5 [Analog Clock](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_5_Analog_Clock/index.html)
+![Analog clock](https://user-images.githubusercontent.com/58120166/233803246-96fb6611-778c-4f04-8004-fb635580d824.png)
+
+## Day-6 [SIP Calculator](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_6_SIP_Calculator/index.html)
+![Sip Calculator](https://user-images.githubusercontent.com/58120166/233803285-fdffc3db-4e75-4791-8c3e-3bb6aee594d1.png)
