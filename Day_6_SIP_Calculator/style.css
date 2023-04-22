@@ -21,12 +21,16 @@
 html,
 body {
     width: 100%;
-    height: -webkit-fill-available;
+    height: fit-content;
+    /* height: -webkit-fill-available; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
-
-html {
+/* only used forpages less than or equal to 100vh */
+/* html {
     height: -webkit-fill-available;
+} */
+body{
+    position: relative;
 }
 
 .full-calculator {
@@ -37,6 +41,7 @@ html {
     flex-wrap: wrap;
     justify-content: center;
     background-color: var(--bg-color);
+    min-height: 100vh;
 
 }
 
@@ -230,6 +235,7 @@ input::-webkit-inner-spin-button {
     width: 80%;
     min-width: 350px;
     margin: 10px;
+    margin-bottom: 40px;
 }
 
 @media screen and (max-width:760px) {
@@ -252,4 +258,27 @@ input::-webkit-inner-spin-button {
         min-width: auto;
     }
 
+}
+
+/* ************************************footer */
+footer{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(58, 55, 55);
+    padding: 3px 0 0 5px;
+    /* border-radius: 5px 0 0 0; */
+    border-radius: 10px 0 0 0;
+    
+}
+footer a{
+
+    text-decoration: none;
+}
+.home{
+    color: #ada4a4;
+}
+footer:hover .home{
+    color: #fff;
 }
