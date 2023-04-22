@@ -18,10 +18,10 @@ let interest = document.getElementById("InterestRange").oninput = function () {
     createBarChart();
 }
 
-console.log("checkk")
+// console.log("checkk")
 let time = document.getElementById("time").oninput = function () {
     var value = this.value;
-    // console.log(value);
+    console.log(this);
 
     this.style.background = `linear-gradient(90deg, var(--slider-color) ${value}%, var(--text-color) ${value}%);`;
 
@@ -64,10 +64,10 @@ function createChart() {
     document.getElementById('chart').innerHTML = ` <canvas id="piechart" class="piechart"> </canvas>`;
 
     x = Sip();
-    console.log(x)
+    // console.log(x)
     const deposited = x[0] * x[2];
     const increment = x[3] - deposited;
-    console.log(deposited, increment);
+    // console.log(deposited, increment);
 
     const ctx = document.getElementById('piechart').getContext("2d");
 
@@ -114,10 +114,8 @@ function createBarChart() {
     document.getElementById('lineChart').innerHTML = `    <canvas class="barChart" id="barChart"></canvas>`;
 
     x = Sip();
-    console.log(x)
-    const deposited = x[0] * x[2];
-    const increment = x[3] - deposited;
-    console.log(deposited, increment);
+    // console.log(x)
+   
 
     const ctx = document.getElementById('barChart').getContext("2d");
 
@@ -133,7 +131,7 @@ function createBarChart() {
         total.push(eachYear)
 
     }
-    console.log(label1, invested, total)
+    // console.log(label1, invested, total)
     const labels = label1;
     let config = {
         type: 'line',
