@@ -6,61 +6,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sip Calculator</title>
-    
+
     <link rel="stylesheet" href="./style.css">
 
 </head>
 
 <body>
-    <section class="interface">
-        <div class="calculator card">
+    <div class="full-calculator">
 
-            <div class="component">
-                <div class="component__name">
-                    <h3> Monthly Investment</h3>
-                    <input type="number" name="principal" placeholder="5000"  value="1000" id="principal">
+
+        <section class="interface">
+            <div class="calculator card">
+
+                <div class="component">
+                    <div class="component__name">
+                        <h3> Monthly Investment</h3>
+                        <input type="number" name="principal" placeholder="5000" value="1000" class="principal"
+                            id="principal">
+                    </div>
+
+                </div>
+
+                <div class="component">
+                    <div class="component__name">
+                        <h3>Expected Return (%)</h3>
+                        <div id="interest__value" class="range__value">12 %</div>
+                    </div>
+                    <div class="component__slider">
+                        <input type="range" min="0" max="40" step="0.1" value="12" class="slider " id="InterestRange">
+
+                    </div>
+
+                </div>
+
+                <div class="component">
+                    <div class="component__name">
+                        <h3>Time Period (year)</h3>
+                        <div id="time__value" class="range__value">5 Yr</div>
+                    </div>
+                    <div class="component__slider">
+                        <input type="range" min="0" max="50" value="5" class="slider " id="time">
+
+                    </div>
+
+                </div>
+
+                <div class=" text">
+                    <div class="component__name">
+                        <h3> Total Amount Invested : <span class="total" id="invested"> ₹ 82486</span> </h3>
+                    </div>
+                </div>
+                <div class=" text">
+                    <div class="component__name">
+                        <h3> Total Earnings : <span class="total" id="earning"> ₹ 82486</span> </h3>
+                    </div>
+                </div>
+                <div class=" text">
+                    <div class="component__name">
+                        <h3> Total Value: <span class="total" id="total"> ₹ 82486</span> </h3>
+                    </div>
                 </div>
 
             </div>
-
-            <div class="component">
-                <div class="component__name">
-                    <h3>Expected Return (%)</h3>
-                    <div id="interest__value" class="range__value">12 %</div>
-                </div>
-                <div class="component__slider">
-                    <input type="range" min="0" max="40" step="0.1" value="12" class="slider " id="InterestRange">
-
-                </div>
-
+            <div class="card" id="chart">
+                <canvas id="piechart" class="piechart"> </canvas>
             </div>
+        </section>
+        <section class="big-card card">
+            <canvas class="barChart" id="barChart"></canvas>
+        </section>
+        
+    </div>
 
-            <div class="component">
-                <div class="component__name">
-                    <h3>Time Period (year)</h3>
-                    <div id="time__value" class="range__value">5 Yr</div>
-                </div>
-                <div class="component__slider">
-                    <input type="range" min="0" max="50" value="5" class="slider " id="time">
-
-                </div>
-
-            </div>
-
-            <div class="component">
-                <div class="component__name">
-                    <h3> Total Value: <span class="total" id="total"> ₹ 82486</span> </h3>
-
-                </div>
-
-            </div>
-
-        </div>
-        <div class="card" id ="chart">
-          <canvas id="piechart" class="piechart" > </canvas>
-        </div>
-    </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+        integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="./script.js"></script>
 </body>

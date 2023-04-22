@@ -24,22 +24,34 @@ body {
     height: -webkit-fill-available;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
+html{
+    height: -webkit-fill-available;
+}
+.full-calculator{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--bg-color);
 
+}
 .interface {
     display: flex;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 100vh;
-    background-color: var(--bg-color);
+    height: 80vh;
+    
 }
 
 .card {
     display: flex;
     background-color: var(--bg-card);
     /* width: 50vw; */
-    height: 50vh;
+    /* height: 50vh; */
     margin: 10px;
     overflow: hidden;
     align-content: center;
@@ -66,9 +78,37 @@ body {
     text-align: left;
     flex-direction: column;
     /* border: 1px solid red; */
-    padding: 20px;
+    padding: 15px  20px;
 }
-
+.text{
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    align-self: flex-start;
+    text-align: left;
+    flex-direction: column;
+    padding: 5px 20px;
+}
+.principal{
+    outline: none;
+    /* background: red; */
+    padding: 4px 10px;
+    margin: 0 10px 0 25px;
+    border-radius: 14px;
+    border: none;
+    font-size: 16px;
+    width: 101px;
+    text-align: center;
+    /* gap: 42px; */
+    display: flex;
+    align-self: center;
+    overflow: hidden;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .component__name {
     color: var(--text-color2);
     font-size: 16px;
@@ -133,6 +173,23 @@ body {
     display: flex;
     padding: 0px;
     /* max-width: 35vh; */
-    border: 1px solid red;
+    /* border: 1px solid red; */
     overflow: visible;
+}
+/* ********************barchart */
+.barChart{
+    height: 40vh;
+    height: 300px;
+    width: 500px;
+}
+.big-card{
+    width: auto;
+    /* height: 50vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid red;
+    overflow: hidden;
+
 }
