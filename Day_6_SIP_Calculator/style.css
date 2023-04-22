@@ -202,6 +202,7 @@ input::-webkit-inner-spin-button {
     height: 350px;
     display: flex;
     padding: 0px;
+    /* transition-duration: 1s; */
     /* max-width: 35vh; */
     /* border: 1px solid red; */
     overflow: visible;

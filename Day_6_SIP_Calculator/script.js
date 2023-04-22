@@ -32,6 +32,7 @@ let time = document.getElementById("time").oninput = function () {
     createChart();
     createBarChart()
 
+
 }
 
 
@@ -181,7 +182,7 @@ function createBarChart() {
                     }
                 }
             },
-            
+
             // responsive:true,
         }
     }
