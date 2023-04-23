@@ -21,7 +21,7 @@ let interest = document.getElementById("InterestRange").oninput = function () {
 // console.log("checkk")
 let time = document.getElementById("time").oninput = function () {
     var value = this.value;
-    console.log(this);
+    // console.log(this);
 
     this.style.background = `linear-gradient(90deg, var(--slider-color) ${value}%, var(--text-color) ${value}%);`;
 
