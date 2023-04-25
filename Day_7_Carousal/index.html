@@ -9,12 +9,18 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <section class="carousel">
-        <i class="fa-solid fa-angles-left move-icon" style="color: #e0e2e5;"id =" left" onclick="changeSlide(-1)"></i>
+    <video autoplay muted id="video" >
+        <source src="./asset/netflix.mp4" type="video/mp4">
+    </video>
+    <div id="all-content">
 
-        <div class="main-part">
+        <div class="heading"><img src="./asset/icon.png" alt=""></div>
+        <section class="carousel">
+            <i class="fa-solid fa-angles-left move-icon" style="color: #e0e2e5;"id =" left" onclick="changeSlide(-1)"></i>
 
-            <div class="card visible" id=" card1">
+            <div class="main-part">
+                
+                <div class="card visible" id=" card1">
                 <div class="img img1">
                     <div class="img__text">
                         <!-- <div class="movie__title">Ant Man Quantammania</div> -->
@@ -64,6 +70,7 @@
    
    
     
+</div>
     <script src="./script.js"></script>
 </body>
 </html>

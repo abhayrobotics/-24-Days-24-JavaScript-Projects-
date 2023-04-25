@@ -1,3 +1,8 @@
+setTimeout(function(){
+    document.getElementById('all-content').style.display ="block";
+    document.getElementById('video').style.display = "none";
+},4000)
+
 const left = document.getElementById("left");
 const right= document.getElementById("right");
 
