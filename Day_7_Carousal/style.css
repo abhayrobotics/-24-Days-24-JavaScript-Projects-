@@ -52,7 +52,7 @@ align-items: center;
     font-size: 80px;
     /* margin: 20px ; */
     padding: 20px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     cursor: pointer;
     
 }
@@ -67,7 +67,7 @@ align-items: center;
     width: 100%;
     transition-duration: 1s;
     overflow: visible;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
 }
 .card{
@@ -200,6 +200,26 @@ align-items: center;
     }
 }
 @media screen and (max-width:650px) {
+    .card{
+        border-radius: 15px;
+    } 
+    .img {
+        height: 170px;
+        width: 80px;
+        border-radius: 15px;
+    }
+    .rank{
+        font-size: 80px;
+    }
+    .move-icon{
+        font-size: 30px;
+        padding: 2px;
+    }
     
-    
+    .card:hover .img__text {
+        transform: scale(0.8) translateX(-50px) ;
+        transition-property: transform;
+        
+       
+    }
 }
