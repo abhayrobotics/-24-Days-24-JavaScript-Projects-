@@ -11,7 +11,7 @@ function changeSlide(e){
 
     const cards= document.getElementsByClassName('card');
     const cards_position = document.getElementsByClassName('visible')
-    // console.log(cards[2])
+    console.log(cards)
     // console.log(cards_position[2])
 
 
