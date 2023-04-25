@@ -1,7 +1,7 @@
 setTimeout(function(){
     document.getElementById('all-content').style.display ="block";
     document.getElementById('video').style.display = "none";
-},4000)
+},4200)
 
 const left = document.getElementById("left");
 const right= document.getElementById("right");
