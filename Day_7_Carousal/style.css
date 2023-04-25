@@ -13,7 +13,8 @@
 }
 video{
     width: 100vw;
-    /* height: 100vh; */
+    height: 100vh;
+    background-color: #000;
     overflow: hidden;
 
 }
@@ -51,7 +52,7 @@ align-items: center;
     font-size: 80px;
     /* margin: 20px ; */
     padding: 20px;
-    /* border: 1px solid red; */
+    border: 1px solid red;
     cursor: pointer;
     
 }
@@ -66,6 +67,7 @@ align-items: center;
     width: 100%;
     transition-duration: 1s;
     overflow: visible;
+    border: 1px solid red;
 
 }
 .card{
@@ -173,4 +175,31 @@ align-items: center;
     color: transparent;
     -webkit-text-stroke:2px var(--text-color) ;
     /* font-family: var(--number-font); */
+}
+
+@media screen and (max-width:920px) {
+    .img{
+        height: 300px;
+        width: 170px ;
+    }
+    .rank{
+        font-size: 150px;
+    }
+    .card{
+        margin: 5px;
+    }
+    .card:hover .img__text {
+        transform: scale(0.8) translateX(-100px) ;
+        transition-property: transform;
+        
+       
+    }
+    .move-icon{
+        font-size: 50px;
+        padding: 2px;
+    }
+}
+@media screen and (max-width:650px) {
+    
+    
 }
