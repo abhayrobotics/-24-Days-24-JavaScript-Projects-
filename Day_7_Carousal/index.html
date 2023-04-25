@@ -5,25 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carousal | Day-7 </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <section class="carousel">
+        <i class="fa-solid fa-angles-left move-icon" style="color: #e0e2e5;"id =" left" onclick="changeSlide(-1)"></i>
+
         <div class="main-part">
 
-            <div class="card">
-                <div class="img">
-                    <!-- <img src="./asset/1.jpg" alt=""> -->
+            <div class="card visible" id=" card1">
+                <div class="img img1">
                     <div class="img__text">
-
-                        <div class="movie__title">Ant Man Quantammania</div>
+                        <!-- <div class="movie__title">Ant Man Quantammania</div> -->
                         <div class="rank">1</div>
                     </div>
                 </div>
             </div>
-            
+            <div class="card visible" id=" card2">
+                <div class="img img2">
+                    <div class="img__text">
+                        <!-- <div class="movie__title">Ant Man Quantammania</div> -->
+                        <div class="rank">2</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card visible" id=" card3">
+                <div class="img img3">
+                   
+                    <div class="img__text">
+                        <!-- <div class="movie__title">Ant Man Quantammania</div> -->
+                        <div class="rank">3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card " id=" card4">
+                <div class="img img4">
+                    <div class="img__text">
+                        <!-- <div class="movie__title">Ant Man Quantammania</div> -->
+                        <div class="rank">4</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card " id=" card5">
+                <div class="img img5">
+                    <div class="img__text">
+                        <!-- <div class="movie__title">Ant Man Quantammania</div> -->
+                        <div class="rank">5</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <i class="fa-solid fa-angles-right move-icon "id =" right" style="color: #e0e2e5;" onclick="changeSlide(+1)"></i>
+
     </section>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1VIZ89FEjYI?&amp;start=2" title=" video "  allow=" autoplay; ></iframe>
     
     <script src="./script.js"></script>
 </body>
