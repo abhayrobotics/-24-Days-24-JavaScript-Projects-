@@ -221,6 +221,11 @@ align-items: center;
     .card{
         border-radius: 15px;
     } 
+
+.card:hover{
+    /* width: 600px; */
+    transform: scale(1.7);
+}
     .img {
         height: 170px;
         width: 80px;
@@ -265,3 +270,4 @@ footer{
   footer:hover .home{
     color: #fff;
   }
+
