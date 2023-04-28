@@ -1,4 +1,7 @@
 
+// new Game
+NewGame();
+
 function RandomArray() {
    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 11, 22, 33, 44, 55, 66, 77, 88];
    let temp = arr;
@@ -35,3 +38,11 @@ function NewGame() {
    board.innerHTML = innerCards;
 
 }
+
+document.addEventListener("click",function(e){
+   // fetching the Dom Element
+   let x= e.target.parentElement;
+   console.log(x.id)
+   console.log(typeof x.id)
+})
+
