@@ -22,6 +22,8 @@ function select(i) {
 
 // generate GAme
 function NewGame() {
+
+   localStorage.clear();
    let board = document.getElementById("board");
    let random =RandomArray()
    console.log(random)
@@ -41,8 +43,42 @@ function NewGame() {
 
 document.addEventListener("click",function(e){
    // fetching the Dom Element
-   let x= e.target.parentElement;
-   console.log(x.id)
-   console.log(typeof x.id)
+   let newitem= e.target.parentElement.id;
+   console.log(newitem)
+   // console.log(typeof x.id)
+   localStorage.setItem("match",0);
+   localStorage.setItem("moves",0);
+   // count moves
+   localStorage.setItem("moves",localStorage.getItem("moves")+1);
+  
+   // if selected 1st item
+   if( localStorage.getItem("item1") == null){
+      
+      localStorage.setItem("item1",newitem);
+      console.log(localStorage.getItem("item1"))
+   }
+   else {
+      let item1 = localStorage.getItem("item1");
+      // MATCHED 
+      if((newitem  == (item1 + item1))   ||   ((newitem + newitem == item1 ))){
+         localStorage.setItem("match",localStorage.getItem("match")+1);
+         console.log('match');
+         localStorage.clear()
+         
+      }
+      // if 
+      else{
+         setTimeout(function(){
+            document.getElementById(newitem).classList.toggle('selected');
+            document.getElementById(item1).classList.toggle('selected');
+            
+         },1000);
+         // clear for new selection pair
+         localStorage.clear()
+      }
+   }
+   if(localStorage.getItem("match")== 8){
+      console.log("You Win!")
+   }
 })
 
