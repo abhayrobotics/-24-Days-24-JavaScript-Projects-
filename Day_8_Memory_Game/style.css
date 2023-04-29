@@ -15,11 +15,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+/* body{
     height: 100%;
-}
+} */
 html,body{
-    height:-webkit-fill-available;
+    overflow: hidden;
+    height: -webkit-fill-available;
     
 }
 a{
