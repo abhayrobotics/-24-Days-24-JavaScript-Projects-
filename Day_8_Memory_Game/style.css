@@ -15,8 +15,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    height: 100%;
+}
 html,body{
     height:-webkit-fill-available;
+    
 }
 a{
     text-decoration: none;
