@@ -18,6 +18,10 @@
 html,body{
     height:-webkit-fill-available;
 }
+a{
+    text-decoration: none;
+    color: #1e1e1e;
+}
 .game{
     width: 100vw;
     height: 100vh;
@@ -26,6 +30,13 @@ html,body{
     align-items: center;
     flex-direction: column;
     background: linear-gradient(45deg, var(--color-1),var(--color-2));
+}
+.heading{
+    margin: 10px 0 40px 0;
+    padding: 5px 10px;
+   
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .control{
     display: flex;
@@ -107,3 +118,38 @@ img{
     margin: auto;
     height: 60%;
 }
+@media screen and (max-width:410px) {
+    :root{
+        --card-height:60px;
+    }
+    .text{
+        font-size: 16px;
+        padding: 3px 6px;
+        margin: 0 5px;
+    }
+}
+
+
+/* ************************************footer */
+footer{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(58, 55, 55);
+    padding: 3px 0 0 5px;
+    /* border-radius: 5px 0 0 0; */
+    border-radius: 10px 0 0 0;
+    /* border: 1px solid red; */
+    
+  }
+  footer a{
+  
+    text-decoration: none;
+  }
+  .home{
+    color: #ada4a4;
+  }
+  footer:hover .home{
+    color: #fff;
+  }

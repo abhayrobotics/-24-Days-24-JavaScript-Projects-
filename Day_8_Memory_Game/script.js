@@ -1,12 +1,12 @@
 // gloabal variable
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 11, 22, 33, 44, 55, 66, 77, 88];
 
-// new Game
-NewGame();
+
 
 // Random array
 function RandomArray() {
-   let temp = arr;
+   let temp = [];
+   temp= arr;
    let random = []
    for (let i = 1; i <= 16; i++) {
       let x = Math.floor(Math.random() * temp.length);
@@ -15,6 +15,7 @@ function RandomArray() {
       // delete used item to forbid repetition
       temp.splice(x, 1)
    }
+   // console.log(random)
    return random;
 }
 
@@ -42,8 +43,8 @@ function NewGame() {
 
    localStorage.clear();
    let board = document.getElementById("board");
-   let random = RandomArray()
-   console.log(random)
+   let random = RandomArray();
+   // console.log(random)
    let innerCards = ""
    for (i in random) {
       // console.log(random[i])
@@ -104,3 +105,5 @@ document.addEventListener("click", function (e) {
 
 })
 
+// new Game
+NewGame();
