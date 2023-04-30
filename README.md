@@ -19,3 +19,9 @@
 
 ## Day-6 [SIP Calculator](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_6_SIP_Calculator/index.html)
 ![Sip Calculator](https://user-images.githubusercontent.com/58120166/233803285-fdffc3db-4e75-4791-8c3e-3bb6aee594d1.png)
+
+## Day-7 [Netflix Style Carousel](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_7_Carousal/index.html)
+![Carousal _ Day-7](https://user-images.githubusercontent.com/58120166/235348974-3a885ec9-76e3-423f-9292-f3a25b7521f3.png)
+
+## Day-8 [Memory Game](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_8_Memory_Game/index.html)
+![Memory-Game-Day-8](https://user-images.githubusercontent.com/58120166/235348977-23325502-7b75-4bb1-82c5-2b105b5ca0ab.png)
