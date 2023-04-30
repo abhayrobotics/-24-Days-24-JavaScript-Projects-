@@ -12,7 +12,9 @@
     overflow-x: hidden;
 }
 html,body{
+    overflow: hidden;
     height: -webkit-fill-available;
+    
 }
 video{
     width: 100vw;
