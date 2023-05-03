@@ -3,6 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    
+.game-bg{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height:100vh;
+}
+.heading{
+    align-self: center;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    border: 1px solid red;
 }
