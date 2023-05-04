@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100vw;
     height:100vh;
 }
@@ -16,5 +17,9 @@
     font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    border: 1px solid red;
+    margin-bottom: 20px;
+    /* border: 1px solid red; */
+}
+.board{
+    border: 1px solid black;
 }
