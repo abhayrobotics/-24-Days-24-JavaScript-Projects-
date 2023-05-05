@@ -4,7 +4,10 @@
     box-sizing: border-box;
 }
 body{
-    overflow: hidden;
+    overflow-x: hidden;
+}
+body, html{
+    height: -webkit-fill-available;
 }
 .game-bg{
     background-color: aquamarine;
@@ -41,7 +44,16 @@ body{
     top: 35px;
     font-size: 20px;
 }
-
+.controls{
+    width: 100px;
+    height: 100px;
+}
+.tab{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    color: black;
+}
 @media screen and (max-width:550px) {
     .heading{
         width:400px ;
@@ -69,3 +81,27 @@ body{
         font-size: 16px;;
     } */
 }
+
+/* ************************************footer */
+footer{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(58, 55, 55);
+    padding: 3px 0 0 5px;
+    /* border-radius: 5px 0 0 0; */
+    border-radius: 10px 0 0 0;
+    /* border: 1px solid red; */
+    
+  }
+  footer a{
+  
+    text-decoration: none;
+  }
+  .home{
+    color: #ada4a4;
+  }
+  footer:hover .home{
+    color: #fff;
+  }
