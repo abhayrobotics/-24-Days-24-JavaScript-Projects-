@@ -23,7 +23,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     margin-bottom: 20px;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 .board{
     border: 1px solid black;
