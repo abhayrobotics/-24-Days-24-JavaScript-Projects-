@@ -13,6 +13,11 @@
     height:100vh;
 }
 .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 40%;
+    margin: 10px;
     align-self: center;
     font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
