@@ -1,4 +1,13 @@
 let blockSize = 25;
+if(window.innerWidth <550){
+    blockSize= 21;
+}
+if(window.innerWidth <430){
+    blockSize = 18;
+}
+if(window.innerWidth <370){
+    blockSize = 15;
+}
 let rows = 20;
 let column = 20;
 let score = 0;
@@ -8,8 +17,8 @@ if(localStorage.getItem("highscore" == null)){
 }
 let gameover = false;
 
-let snakeX = 225;
-let snakeY = 225;
+let snakeX = 12* blockSize;
+let snakeY = 12* blockSize;
 let snakeBody = [];
 
 let velocityX = 0;

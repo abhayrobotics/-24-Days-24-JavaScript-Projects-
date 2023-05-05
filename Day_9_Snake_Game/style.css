@@ -26,7 +26,7 @@ body{
     font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     /* border: 1px solid red; */
 }
 .score{
@@ -41,6 +41,31 @@ body{
     top: 35px;
     font-size: 20px;
 }
-.board{
-    /* border: 1px solid black; */
+
+@media screen and (max-width:550px) {
+    .heading{
+        width:400px ;
+        font-size: 25px;
+    }
+    .score,.highscore{
+        font-size: 16px;;
+    }
+}
+@media screen and (max-width:430px) {
+    .heading{
+        width:360px ;
+        font-size: 22px;
+    }
+    .score,.highscore{
+        font-size: 16px;;
+    }
+}
+@media screen and (max-width:370px) {
+    .heading{
+        width:300px ;
+        font-size: 22px;
+    }
+    /* .score,.highscore{
+        font-size: 16px;;
+    } */
 }
