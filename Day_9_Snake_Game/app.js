@@ -2,37 +2,41 @@ let blockSize = 25;
 let rows = 20;
 let column = 20;
 let score = 0;
+if(localStorage.getItem("highscore" == null)){
+
+    localStorage.setItem("highscore",0);
+}
 let gameover = false;
 
-let snakeX = 25;
-let snakeY = 25;
+let snakeX = 225;
+let snakeY = 225;
 let snakeBody = [];
 
 let velocityX = 0;
 let velocityY = 0;
 
-let foodX = 125;
-let foodY = 125;
+let foodX;
+let foodY;
 
 let board = document.getElementById("board");
 let ctx = board.getContext("2d");
 
 
 window.onload = function () {
-   
-    
-
-        // board configruration
-        board.width = column * blockSize;
-        board.height = rows * blockSize;
+    document.getElementById("highscore").innerText = localStorage.getItem("highscore");
 
 
-        RandomFood()
-        document.addEventListener("keydown", changeDir);
+    // board configruration
+    board.width = column * blockSize;
+    board.height = rows * blockSize;
 
-        setInterval(update, 150);
-        // update()
-    
+
+    RandomFood()
+    document.addEventListener("keydown", changeDir);
+
+    setInterval(update, 150);
+    // update()
+
 }
 
 function changeDir(e) {
@@ -83,20 +87,22 @@ function update() {
 
     // Food
     ctx.fillStyle = "red";
-    ctx.fillRect(foodX, foodY, blockSize, blockSize)
+    ctx.fillRect(foodX, foodY, blockSize, blockSize);
+    // let food = document.getElementById("body");
+    // ctx.drawImage(food,foodX, foodY)
 
-     // gameover conitions boundary
-     if (snakeX > board.width || snakeY > board.height || snakeX < 0 || snakeY < 0) {
+    // gameover conitions boundary
+    if (snakeX > board.width || snakeY > board.height || snakeX < 0 || snakeY < 0) {
         gameover = true;
-        console.log("game over", gameover);
-        alert("Game Over! Score: ",score )
+        // console.log("game over", gameover);
+        alert("Game Over! ")
     }
     // gameover conitions body eat
     for (i in snakeBody) {
         if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
-            gameover = true; 
-            console.log("gamover",gameover);
-            alert("Game Over! Score: ",score )
+            gameover = true;
+            // console.log("gamover",gameover);
+            alert("Game Over! ")
         }
     }
 
@@ -104,7 +110,7 @@ function update() {
     if (snakeX == foodX && snakeY == foodY) {
         score = score + 1;
         snakeBody.push([foodX, foodY])
-        console.log(snakeBody)
+        // console.log(snakeBody)
         document.getElementById("score").innerText = score;
         RandomFood()
     }
@@ -121,11 +127,21 @@ function update() {
     ctx.fillStyle = "lime";
     ctx.fillRect(snakeX, snakeY, blockSize, blockSize);
 
+
+
     // snakeBody
     for (i in snakeBody) {
         ctx.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize, blockSize);
         // console.log()
 
     }
+    // highscore calc
+    if (localStorage.getItem("highscore") < score) {
+        highscore = score;
+        localStorage.setItem("highscore", highscore);
+        console.log(localStorage.getItem('highscore') +"high")
+        document.getElementById("highscore").innerText = localStorage.getItem("highscore");
+    }
    
+
 }

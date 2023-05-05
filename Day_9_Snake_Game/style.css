@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    overflow: hidden;
+}
 .game-bg{
     background-color: aquamarine;
     display: flex;
@@ -29,7 +32,14 @@
 .score{
     position: absolute;
     right: 0;
-    font-size: 22px;
+    top: 10px;
+    font-size: 20px;
+}
+.highscore{
+    position: absolute;
+    right: 0;
+    top: 35px;
+    font-size: 20px;
 }
 .board{
     /* border: 1px solid black; */
