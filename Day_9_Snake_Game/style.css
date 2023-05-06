@@ -45,15 +45,27 @@ body, html{
     font-size: 20px;
 }
 .controls{
-    width: 100px;
-    height: 100px;
+    /* position: absolute;
+    bottom: 0; */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin: 20px;
 }
-.tab{
-    width: 50px;
-    height: 50px;
-    background-color: red;
-    color: black;
+.button{
+    font-size: 38px;
+    border: 1px solid #1e1e1e;
+    margin: 10px 5px 10px 5px;
+    cursor: pointer;
+    background-color:#fdfdfd;
+    border-radius: 8px;
+    transition-duration: 0.5s;
 }
+.button:hover{
+    box-shadow: 5px 5px 10px #1e1e1e;
+}
+
 @media screen and (max-width:550px) {
     .heading{
         width:400px ;
