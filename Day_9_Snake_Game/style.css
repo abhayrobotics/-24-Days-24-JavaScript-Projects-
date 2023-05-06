@@ -11,6 +11,8 @@ body, html{
 }
 .game-bg{
     background-color: aquamarine;
+    background: url('./bg2.jpg');
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +33,13 @@ body, html{
     text-align: center;
     margin-bottom: 25px;
     /* border: 1px solid red; */
+}
+.heading h3{
+    text-shadow: 2px 2px goldenrod;
+}
+.heading p{
+    text-shadow: 1px 1px goldenrod;
+    font-weight: 500;
 }
 .score{
     position: absolute;
@@ -55,7 +64,7 @@ body, html{
    margin: 20px;
 }
 .button{
-    font-size: 38px;
+    font-size: 50px;
     border: 1px solid #1e1e1e;
     margin: 10px 5px 10px 5px;
     cursor: pointer;
@@ -88,6 +97,9 @@ body, html{
     .controls{
         display: flex;
     }
+    /* .button{
+        font-size: 50px;
+    } */
 }
 @media screen and (max-width:370px) {
     .heading{
