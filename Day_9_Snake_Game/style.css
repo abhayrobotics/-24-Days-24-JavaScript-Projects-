@@ -35,10 +35,10 @@ body, html{
     /* border: 1px solid red; */
 }
 .heading h3{
-    text-shadow: 2px 2px goldenrod;
+    text-shadow: 1px 1px white;
 }
 .heading p{
-    text-shadow: 1px 1px goldenrod;
+    text-shadow: 1px 1px white;
     font-weight: 500;
 }
 .score{
