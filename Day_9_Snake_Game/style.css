@@ -118,6 +118,9 @@ a p{
     .controls{
         display: flex;
     }
+    a p{
+        font-size: 16px;
+    }
     /* .button{
         font-size: 50px;
     } */
