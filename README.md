@@ -25,3 +25,6 @@
 
 ## Day-8 [Memory Game](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_8_Memory_Game/index.html)
 ![Memory-Game-Day-8](https://user-images.githubusercontent.com/58120166/235348977-23325502-7b75-4bb1-82c5-2b105b5ca0ab.png)
+
+## Day-9 [Snake Game](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_9_Snake_Game/index.html)
+![Snake Game](https://user-images.githubusercontent.com/58120166/236629620-dbdbb65f-f63d-4e55-ab55-3c9a66155a06.png)
