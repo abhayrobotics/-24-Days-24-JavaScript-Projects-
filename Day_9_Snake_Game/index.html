@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.2.0/remixicon.css" integrity="sha512-eRbcr5kt0vg2Kgl5BBKIqXoZ0f1lpe4ImM8GyzJN7mrhUR57xPh2JX+5Ra8zlh5QZWxEVQW9MOfMaCEEjnMcMA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.2.0/remixicon.css"
+        integrity="sha512-eRbcr5kt0vg2Kgl5BBKIqXoZ0f1lpe4ImM8GyzJN7mrhUR57xPh2JX+5Ra8zlh5QZWxEVQW9MOfMaCEEjnMcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Snake Game</title>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -13,24 +15,28 @@
 <body>
     <section class="game-bg">
         <div class="heading">
-            <h3>Snake Game</h3> 
+            <h3>Snake Game</h3>
+            <a href="./index.html">
+
+                <p class="restart">New Game</p>
+            </a>
             <p class="highscore">High Score: <span id="highscore"> 0</span></p>
             <p class="score">Score: <span id="score"> 0</span></p>
         </div>
         <canvas class="board" id="board">
 
         </canvas>
-       
+
 
         <div class="controls">
-            <i class=" button ri-arrow-up-fill"  onclick="mobileDirection('up')"></i>
+            <i class=" button ri-arrow-up-fill" onclick="mobileDirection('up')"></i>
 
             <div class="tab">
                 <i class="  button ri-arrow-left-fill" onclick="mobileDirection('left')"></i>
                 <i class=" button ri-arrow-down-fill" onclick="mobileDirection('down')"></i>
                 <i class=" button ri-arrow-right-fill" onclick="mobileDirection('right')"></i>
             </div>
-           
+
         </div>
     </section>
     <!-- <img src="./food2.png" alt="" id="body"> -->

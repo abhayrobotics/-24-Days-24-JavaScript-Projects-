@@ -34,24 +34,45 @@ body, html{
     margin-bottom: 25px;
     /* border: 1px solid red; */
 }
+a{
+    text-decoration: none;
+}
 .heading h3{
     text-shadow: 1px 1px white;
 }
-.heading p{
-    text-shadow: 1px 1px white;
-    font-weight: 500;
+
+
+a p{
+    position: absolute;
+    font-size: 20px;
+    bottom: -20px;
+    left: 0px;
+    padding: 5px 10px;
+    color: white;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.restart:hover{
+    box-shadow: 2px 2px 10px #1e1e1e;
 }
 .score{
     position: absolute;
     right: 0;
     top: 10px;
     font-size: 20px;
+    text-shadow: 1px 1px white;
+    font-weight: 500;
+    color: #1e1e1e;
 }
 .highscore{
     position: absolute;
     right: 0;
     top: 35px;
     font-size: 20px;
+    text-shadow: 1px 1px white;
+    font-weight: 500;
+    color: #1e1e1e;
 }
 .controls{
     /* position: absolute;
