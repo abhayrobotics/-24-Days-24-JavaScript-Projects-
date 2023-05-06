@@ -47,6 +47,7 @@ window.onload = function () {
     // update()
 
 }
+// controls for keyboard input
 
 function changeDir(e) {
     if (e.key == "ArrowUp" && velocityY != 1 * blockSize) {
@@ -65,6 +66,30 @@ function changeDir(e) {
         velocityX = -1 * blockSize;
     }
     else if (e.key == "ArrowRight" && velocityX != -1 * blockSize) {
+        // console.log(e.key);
+        velocityY = 0;
+        velocityX = 1 * blockSize;
+    }
+
+}
+// cotrols for mobile screen
+function mobileDirection(key1){
+    if (key1 == "up" && velocityY != 1 * blockSize) {
+        // console.log(e.key);
+        velocityY = -1 * blockSize;
+        velocityX = 0;
+    }
+    else if (key1 == "down" && velocityY != -1 * blockSize) {
+        // console.log(e.key);
+        velocityY = 1 * blockSize;
+        velocityX = 0;
+    }
+    else if (key1 == "left" && velocityX != 1 * blockSize) {
+        // console.log(e.key);
+        velocityY = 0;
+        velocityX = -1 * blockSize;
+    }
+    else if (key1 == "right" && velocityX != -1 * blockSize) {
         // console.log(e.key);
         velocityY = 0;
         velocityX = 1 * blockSize;
