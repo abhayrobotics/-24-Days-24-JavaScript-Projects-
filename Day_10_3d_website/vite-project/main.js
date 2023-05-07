@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import "./style.css"
 
+// import gsap
+import gsap from "gsap"
+
 // importing controls
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 
@@ -10,7 +13,8 @@ const scene = new THREE.Scene();
 // create our object
 const geometry = new THREE.SphereGeometry(3,64,64);
 const material = new THREE.MeshStandardMaterial({
-    color: "#00ff83",
+    color: "#00ff80",
+    roughness:0.5,
     
 });
 // combining geomery and material
@@ -41,9 +45,19 @@ scene.add(camera);
 const  canvas = document.querySelector('.webgl');
 const renderer  = new  THREE.WebGLRenderer({canvas});
 renderer.setSize(sizes.width, sizes.height);
+renderer.setPixelRatio(2);//improves the edge pixel
 renderer.render(scene,camera);
 
 
+// Controls
+const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true;
+// dsiableing zoom and pan
+controls.enablePan = false;
+controls.enableZoom = false;
+// enablinf auto rotate
+controls.autoRotate = true;
+controls.autoRotateSpeed = 10;
 
 // resize
 window.addEventListener("resize",()=>{
@@ -61,6 +75,7 @@ window.addEventListener("resize",()=>{
 // render the scene for every frame
 const loop = ()=>{
 
+    controls.update();
     // mesh.position.x +=0.1;
     // mesh.position.y =0.1;
     // render
@@ -69,3 +84,10 @@ const loop = ()=>{
 };
 
 loop();
+
+
+// timeline magic
+const tl = gsap.timeline({defaults:{duration:1}});
+tl.fromTo(mesh.scale, {x:0,y:0,z:0},{x:1,y:1,z:1});
+tl.fromTo('.nav',{y:"-100%"},{y:"0%"});
+tl.fromTo('.heading',{opacity:0},{opacity:1})
