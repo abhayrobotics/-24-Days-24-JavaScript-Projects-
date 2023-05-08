@@ -1,7 +1,8 @@
-import './style.css'
+// import './style.css'
 
-import * as THREE from 'three';
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
+// import * as THREE from 'three';
+
+// import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 
 //  scene
 const scene = new THREE.Scene();
@@ -17,23 +18,23 @@ const mesh = new THREE.Mesh(geometry,material);
 scene.add(mesh);
 
 // object 2 
-// const curve = new THREE.EllipseCurve(
-// 	0,  0,            // ax, aY
-// 	10, 10,           // xRadius, yRadius
-// 	0,  2 * Math.PI,  // aStartAngle, aEndAngle
-// 	false,            // aClockwise
-// 	0                 // aRotation
-// );
+const curve = new THREE.EllipseCurve(
+	0,  0,            // ax, aY
+	10, 10,           // xRadius, yRadius
+	0,  2 * Math.PI,  // aStartAngle, aEndAngle
+	false,            // aClockwise
+	0                 // aRotation
+);
 
-// const points = curve.getPoints( 50 );
-// const geometry1 = new THREE.BufferGeometry().setFromPoints( points );
+const points = curve.getPoints( 50 );
+const geometry1 = new THREE.BufferGeometry().setFromPoints( points );
 
-// const material1 = new THREE.LineBasicMaterial( { color: 0xff0000 } );
+const material1 = new THREE.LineBasicMaterial( { color: 0xff0000 } );
 
-// // Create the final object to add to the scene
-// const ellipse = new THREE.Line( geometry1, material1 );
+// Create the final object to add to the scene
+const ellipse = new THREE.Line( geometry1, material1 );
 
-// scene.add(ellipse)
+scene.add(ellipse)
 
 
 // sizes
@@ -63,10 +64,7 @@ scene.add(camera);
 // renderer
 
 const canvas = document.querySelector('.hero');
-const renderer = new THREE.WebGLRenderer({
-  canvas:canvas,
-  alpha:true,//background:transparent
-});
+const renderer = new THREE.WebGLRenderer({canvas});
 renderer.setSize(sizes.width ,sizes.height);
 renderer.render(scene, camera);
 
@@ -77,8 +75,8 @@ controls.enableDamping = true;
 controls.enablePan = false;
 controls.enableZoom = false;
 // enablinf auto rotate
-// controls.autoRotate = true;
-// controls.autoRotateSpeed = 5;
+controls.autoRotate = true;
+controls.autoRotateSpeed = 5;
 
 
 // resize
@@ -98,9 +96,8 @@ window.addEventListener("resize",()=>{
 const loop = ()=>{
 
   controls.update();
-  mesh.rotation.x +=0.02;
-  mesh.rotation.y +=0.02;
-  mesh.rotation.z +=0.02;
+  // mesh.position.x +=0.1;
+  // mesh.position.y =0.1;
   // render
   renderer.render(scene, camera);
   window.requestAnimationFrame(loop)
