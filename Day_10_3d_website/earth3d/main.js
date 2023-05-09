@@ -1,120 +1,72 @@
 import * as THREE from 'three';
-import "./style.css"
 
-// import gsap
-import gsap from "gsap"
+import './style.css'
 
-// importing controls
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
+let material, geometry, mesh, canvas, camera, lightPoint, lightAmbi, scene, renderer;
 
-// Scene
-const scene = new THREE.Scene();
+function main() {
 
-// create our object
-// const geometry = new THREE.SphereGeometry(3,64,64);
-const geometry = new THREE.TorusKnotGeometry( 2, 0.8, 100, 16 ); 
-const material = new THREE.MeshStandardMaterial({
-    color: "#0000ff",
-    roughness:0.5,
+  //? canvas
+  canvas = document.querySelector('.webgl');
+
+  //? scene
+  scene = new THREE.Scene();
+
+  //? camera(angle, width/height, nearest point, farthest point)
+  camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 2;
+  // other way
+  // camera.position.set(0,0,2);
+  scene.add(camera);
+
+  //? render (antialias: true means distortion free)
+  renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  // clears the render
+  // renderer.autoClear = false;
+  // improves pixel edge
+  renderer.setPixelRatio(window.devicePixelRatio);
+  // colorand opacity 0.0
+  // renderer.setClearColor(0x00000, 1)
+
+  //? object
+
+  geometry = new THREE.SphereGeometry(2, 32, 32);
+  material = new THREE.MeshStandardMaterial({
+    roughness: 1,
+    metalness: 0,
+    // map: THREE.ImageUtils.loadTexture('./texture/earthmap1k.jpg'),
+    // bumpMap: THREE.ImageUtils.loadTexture("./texture/earthbump.jpg'"),
+    // map: new THREE.ImageUtils('./texture/earthmap1k.jpg'),
+    // bumpMap: new THREE.ImageUtils("./texture/earthbump.jpg'"),
+    bumpScale: 0.1
+  })
+  mesh = new THREE.Mesh(geometry, material)
+  scene.add(mesh);
+
+  // light
+  lightAmbi = new THREE.AmbientLight(0xffffff, 0.2);
+  // lightAmbi.position.set(10,10,10)
+  scene.add(lightAmbi)
+
+  // point light 
+  lightPoint = new THREE.PointLight(0xfffff, 0.9);
+  lightPoint.position.set(5, 3, 5);
+  scene.add(lightPoint);
+
+
+  const animate = ()=>{
+    requestAnimationFrame(animate);
+    mesh.rotation.y -=0.0015;
+
+    render1();
+  }
+
+  const render1 =()=>{
+    renderer.render(scene , camera)
     
-});
-// combining geomery and material
-const mesh = new THREE.Mesh(geometry,material);
-scene.add(mesh);
-
-// window sizes
-const sizes ={
-    width: window.innerWidth,
-    height: window.innerHeight
+    animate()
+  }
 }
 
-
-
-//  point light
-const light = new THREE.PointLight(0xffffff,1,100);
-light.position.set(0,5,5);
-scene.add(light);
-// ambient light
-const light2 = new THREE.AmbientLight( 0x404040 ); // soft white light
-scene.add( light2 );
-
-// light helper
-// const sphereSize = 1;
-// const pointLightHelper = new THREE.PointLightHelper( light, sphereSize );
-// scene.add( pointLightHelper );
-
-// plane helper
-// const plane = new THREE.Plane( new THREE.Vector3( 1, 1, 0.2 ), 3 );
-// const helper1 = new THREE.PlaneHelper( plane, 1, 0xffff00 );
-// scene.add( helper1 );
-
-// polar grid helper
-// const radius = 10;
-// const sectors = 16;
-// const rings = 8;
-// const divisions = 64;
-// const helper = new THREE.PolarGridHelper( radius, sectors, rings, divisions );
-// scene.add( helper );
-
-
-// camera
-const camera = new THREE.PerspectiveCamera(45,sizes.width/ sizes.height,0.1,100);
-camera.position.z = 20;
-// camera.position.x = 20;
-scene.add(camera);
-
-// helper
-// const helper = new THREE.CameraHelper( camera );
-// scene.add( helper );
-
-
-// renderer
-const  canvas = document.querySelector('.webgl');
-const renderer  = new  THREE.WebGLRenderer({canvas});
-renderer.setSize(sizes.width, sizes.height);
-renderer.setPixelRatio(2);//improves the edge pixel
-renderer.render(scene,camera);
-
-
-// Controls
-const controls = new OrbitControls(camera, canvas);
-controls.enableDamping = true;
-// dsiableing zoom and pan
-controls.enablePan = false;
-controls.enableZoom = false;
-// enablinf auto rotate
-controls.autoRotate = true;
-controls.autoRotateSpeed = 10;
-
-// resize
-window.addEventListener("resize",()=>{
-    // updateig sizes
-    sizes.width = window.innerWidth;
-    sizes.height = window.innerHeight;
-    // console.log(sizes.width)
-
-    // updating camera
-    camera.aspect =sizes.width/sizes.height;
-    // removes sqeezing and maintains size
-    camera.updateProjectionMatrix();
-    renderer.setSize(sizes.width,sizes.height)
-})
-// render the scene for every frame
-const loop = ()=>{
-
-    controls.update();
-    // mesh.position.x +=0.1;
-    // mesh.position.y =0.1;
-    // render
-    renderer.render(scene, camera);
-    window.requestAnimationFrame(loop)
-};
-
-loop();
-
-
-// timeline magic
-const tl = gsap.timeline({defaults:{duration:1}});
-tl.fromTo(mesh.scale, {x:0,y:0,z:0},{x:1,y:1,z:1});
-tl.fromTo('.nav',{y:"-100%"},{y:"0%"});
-tl.fromTo('.heading',{opacity:0},{opacity:1})
+window.onload = main;
