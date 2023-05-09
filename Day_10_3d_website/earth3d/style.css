@@ -9,4 +9,5 @@ body{
 }
 .webgl{
   /* border: 1px solid red; */
+  width: fit-content;
 }

@@ -2,10 +2,7 @@ import * as THREE from 'three';
 
 import './style.css'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-// let material, geometry, mesh, canvas, camera, lightPoint, lightAmbi, scene, renderer;
-
-// function main() {
-
+import gsap from "gsap"
 
 
 //? scene
@@ -32,12 +29,12 @@ const canvas = document.querySelector('.webgl');
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, });
 renderer.setSize(sizes.width, sizes.height);
 // clears the render
-// renderer.autoClear = false;
+renderer.autoClear = false;
 // improves pixel edge
 renderer.setPixelRatio(window.devicePixelRatio);
 
 // colorand opacity 0.0
-// renderer.setClearColor(0x00000,0.5)
+renderer.setClearColor(0x00000,0.0)
 
 //? earth object
 
@@ -46,7 +43,7 @@ const material = new THREE.MeshStandardMaterial({
   // color: "#0000ff",
   roughness: 1,
   metalness: 0,
-
+//  emissive:blue,
   map: new THREE.TextureLoader().load('./texture/earthmap1k.jpg'),
   // map: new THREE.TextureLoader().load('./texture/specularmap.jpg'),
  
@@ -72,6 +69,22 @@ const cloudmesh = new THREE.Mesh(cloudgeometry,cloudmaterial)
 scene.add(cloudmesh);
 
 
+//? moon object
+
+// const moongeometry = new THREE.BoxGeometry(1,1,1);
+// const moonmaterial = new THREE.MeshStandardMaterial({
+//   color:"#ff0000",
+//   // map: new THREE.TextureLoader().load('./texture/galaxy.png'),
+//   // map: new THREE.TextureLoader().load('./texture/nebula.jpg'),
+//   // transparent:true,
+//   // side: THREE.BackSide,
+//    roughness: 0.3,
+//   metalness: 0.4,
+ 
+// })
+// const moonmesh = new THREE.Mesh(moongeometry,moonmaterial)
+// moonmesh.position.set(1.8,0.5,0)
+// scene.add(moonmesh);
 //? galaxy object
 
 const stargeometry = new THREE.SphereGeometry(5, 64, 64);
@@ -84,7 +97,9 @@ const starmaterial = new THREE.MeshStandardMaterial({
  
 })
 const startmesh = new THREE.Mesh(stargeometry,starmaterial)
-// scene.add(startmesh);
+scene.add(startmesh);
+
+
 
 // polar grid helper
 // const radius = 10;
@@ -114,7 +129,7 @@ const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
 // dsiableing zoom and pan
 controls.enablePan = false
-controls.enableZoom = false;
+controls.enableZoom =false;
 
 
 // resize
@@ -138,6 +153,7 @@ const loop = () => {
   // mesh.rotation.x= 0;
   mesh.rotation.y += 0.008;
   cloudmesh.rotation.y += 0.007;
+  // moonmesh.rotation.y += 0.007;
   // startmesh.rotation.y -= 0.001;
 
   // render
@@ -145,5 +161,8 @@ const loop = () => {
   window.requestAnimationFrame(loop)
 };
 
-loop();
+window.onload = loop();
 
+// timeline magic
+const tl = gsap.timeline({defaults:{duration:1}});
+tl.fromTo(mesh.scale, {x:0,y:0,z:0},{x:1,y:1,z:1});
