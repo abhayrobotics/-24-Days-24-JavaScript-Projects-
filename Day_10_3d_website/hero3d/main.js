@@ -10,7 +10,10 @@ const scene = new THREE.Scene();
 //  object
 const geometry  = new THREE.TorusKnotGeometry( 2.5,0.8, 200, 20 );
 const material = new THREE.MeshStandardMaterial({
-  color: 0xfffff,
+  color: "#3f7b9d",
+  roughness:0.5,
+  metalness:1,
+  wireframe:true,
 
 });
 const mesh = new THREE.Mesh(geometry,material);
@@ -43,15 +46,15 @@ const sizes = {
 }
 
 // light
-const light = new THREE.AmbientLight(0x404040);
+const light = new THREE.AmbientLight(0xffffff,0.9);
 scene.add(light);
-const light2 = new THREE.PointLight(0x0000ff, 1, 1000);
-light2.intensity =1;
-light2.position.set(0 , 5, 5);
+const light2 = new THREE.PointLight(0xffffff, 0.1, 1000);
+light2.intensity =10;
+light2.position.set(0,6,6);
 scene.add(light2);
 
 // light helper
-const sphereSize = 1;
+// const sphereSize = 1;
 // const pointLightHelper = new THREE.PointLightHelper( light2, sphereSize );
 // scene.add( pointLightHelper );
 
@@ -98,9 +101,9 @@ window.addEventListener("resize",()=>{
 const loop = ()=>{
 
   controls.update();
-  mesh.rotation.x +=0.02;
-  mesh.rotation.y +=0.02;
-  mesh.rotation.z +=0.02;
+  mesh.rotation.x +=0.002;
+  mesh.rotation.y +=0.002;
+  mesh.rotation.z +=0.002;
   // render
   renderer.render(scene, camera);
   window.requestAnimationFrame(loop)
