@@ -19,7 +19,7 @@ const sizes = {
 
 //? camera(angle, width/height, nearest point, farthest point)
 const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 1000);
-camera.position.z = 10;
+camera.position.z = 3;
 // other way
 // camera.position.set(0,0,2);
 scene.add(camera);
@@ -41,34 +41,24 @@ renderer.setPixelRatio(window.devicePixelRatio);
 
 //? earth object
 
-const geometry = new THREE.SphereGeometry(3, 64, 64);
+const geometry = new THREE.SphereGeometry(1, 32, 32);
 const material = new THREE.MeshStandardMaterial({
   // color: "#0000ff",
   roughness: 1,
   metalness: 0,
 
   map: new THREE.TextureLoader().load('./texture/earthmap1k.jpg'),
+  // map: new THREE.TextureLoader().load('./texture/specularmap.jpg'),
+ 
   bumpMap: new THREE.TextureLoader().load('./texture/earthbump.jpg'),
-  bumpScale: 2.5,
+  bumpScale: .3,
 })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh);
 
-//? galaxy object
-
-const stargeometry = new THREE.SphereGeometry(80, 64, 64);
-const starmaterial = new THREE.MeshStandardMaterial({
-  
-  map: new THREE.TextureLoader().load('./texture/galaxy.png'),
-  transparent:true,
-  side: THREE.BackSide,
- 
-})
-const startmesh = new THREE.Mesh(stargeometry,starmaterial)
-scene.add(startmesh);
 //? cloud object
 
-const cloudgeometry = new THREE.SphereGeometry(3.1, 64, 64);
+const cloudgeometry = new THREE.SphereGeometry(1.05, 64, 64);
 const cloudmaterial = new THREE.MeshStandardMaterial({
   // color: "#0000ff",
   // roughness: 1,
@@ -82,6 +72,20 @@ const cloudmesh = new THREE.Mesh(cloudgeometry,cloudmaterial)
 scene.add(cloudmesh);
 
 
+//? galaxy object
+
+const stargeometry = new THREE.SphereGeometry(5, 64, 64);
+const starmaterial = new THREE.MeshStandardMaterial({
+  
+  // map: new THREE.TextureLoader().load('./texture/galaxy.png'),
+  map: new THREE.TextureLoader().load('./texture/nebula.jpg'),
+  // transparent:true,
+  side: THREE.BackSide,
+ 
+})
+const startmesh = new THREE.Mesh(stargeometry,starmaterial)
+// scene.add(startmesh);
+
 // polar grid helper
 // const radius = 10;
 // const sectors = 16;
@@ -91,13 +95,13 @@ scene.add(cloudmesh);
 // scene.add( helper );
 
 // light
-const lightAmbi = new THREE.AmbientLight(0xffffff);
+const lightAmbi = new THREE.AmbientLight(0x333333);
 // lightAmbi.position.set(10,10,10)
 scene.add(lightAmbi)
 
 // point light 
-const lightPoint = new THREE.PointLight(0xffffff, 1, 1000);
-lightPoint.position.set(5, 3, 5);
+const lightPoint = new THREE.PointLight(0xffffff, 1.2, 1000);
+lightPoint.position.set(4, 3, 5);
 scene.add(lightPoint);
 
 // const sphereSize = 1;
@@ -133,8 +137,8 @@ const loop = () => {
   // controls.update();
   // mesh.rotation.x= 0;
   mesh.rotation.y += 0.008;
-  cloudmesh.rotation.y += 0.003;
-  startmesh.rotation.y -= 0.001;
+  cloudmesh.rotation.y += 0.007;
+  // startmesh.rotation.y -= 0.001;
 
   // render
   renderer.render(scene, camera);
