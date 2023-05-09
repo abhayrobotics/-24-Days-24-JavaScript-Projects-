@@ -1,0 +1,46 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+  font-size: 16px;
+}
+.webgl{
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1;
+}
+
+.main-body{
+  position: relative;
+  color: white;
+  /*! important */
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px solid red;
+  height: 100vh;
+  width: 100%;
+  user-select: none;
+}
+.nav{
+  position: relative;
+  z-index: 2;
+  list-style: none;
+  display: flex;
+  gap: 4rem;
+  justify-content: space-around;
+  padding-top: 2rem;
+  /* border: 1px solid red; */
+
+}
+.heading{
+  z-index: 2;
+  font-size: 1.4rem;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+}
