@@ -4,3 +4,36 @@
     box-sizing: border-box;
     
 }
+:root{
+    /* *color */
+    --bg-color:#dbdbdb;
+    --bg2-color:  #1e1e1e;
+    --text-color:#fdfdfd;
+    --subtext_color: ;
+
+    /** text style */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+body{
+    font-size: 16px;
+}
+/* **********************dashoboard */
+
+.background{
+    background-color: var(--bg2-color);
+    width: 100vw;
+    height: 100vh;
+}
+.heading{
+    color: var(--text-color);
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    padding: 0.25rem;
+}
+/* **********************player */
+
+
+
+/* **********************Music list */
