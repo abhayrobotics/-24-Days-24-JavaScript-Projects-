@@ -1,39 +1,63 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
-:root{
+
+:root {
     /* *color */
-    --bg-color:#dbdbdb;
-    --bg2-color:  #1e1e1e;
-    --text-color:#fdfdfd;
-    --subtext_color: ;
+    /* *ight mode */
+    /* --bg-color: #fff
+    --bg2-color: #fafafa;
+    --text-color: #1b1b1b;
+    --subtext_color: #1e1e1e; */
+    
+    /* *dark mode */
+    --bg-color: #121212;
+    --bg2-color: #1e1e1e;
+    --text-color: #e1e1e1;
+    --subtext_color: #9c9c9c;
 
     /** text style */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
-body{
+
+body {
     font-size: 16px;
 }
+
 /* **********************dashoboard */
 
-.background{
-    background-color: var(--bg2-color);
+.background {
+    background-color: var(--bg-color);
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.heading{
+
+.heading {
     color: var(--text-color);
     font-size: 2rem;
     width: 100%;
     text-align: center;
     padding: 0.25rem;
+    padding-bottom: 0.75rem;
+    /* border: 1px solid red; */
 }
-/* **********************player */
 
+/* **********************player */
+.player {
+    background-color: var(--bg2-color);
+    width: 40%;
+    min-width: 400px;
+    height: 500px;
+    
+}
 
 
 /* **********************Music list */
