@@ -79,19 +79,54 @@ i{
 .card {
     background-color: var(--bg2-color);
     /* width: 40%; */
-    min-width: 430px;
+    width: 430px;
     height: 500px;
     padding: 1rem;
     /* box-shadow: 3px 3px 10px  rgb(105, 104, 104); */
     /* margin: 1rem; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     
 }
 .header__icons{
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+.music__poster{
+    margin:1rem 0;
+    width: 80%;
+    height: 60%;
+    overflow: hidden;
+    background: url('./asset/img/1.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+.music__artist{
+    color: var(--subtext_color);
+    text-align: center;
+}
+.music__artist h3{
+    font-size: 1.2rem;
+}
+.music__artist h4{
+    font-size: 1rem;
+}
+.music__controls {
+    /* border: 1px solid red; */
+    margin: 1.5rem 0;
+}
+.music__scroll{
+    background-color:  var(--text-color);
+    width: 80%;
+    border-radius: 10px;
+    margin: 0.5rem;
+    height: 3px;
+}
+.music__controls a{
+    margin: 0 1.5rem;
 }
 /* **********************Music list */
