@@ -28,3 +28,7 @@
 
 ## Day-9 [Snake Game](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_9_Snake_Game/index.html)
 ![Snake Game](https://user-images.githubusercontent.com/58120166/236629620-dbdbb65f-f63d-4e55-ab55-3c9a66155a06.png)
+
+## Day-10 [3d Earth](https://abhayrobotics3dearth.netlify.app/)
+![day 10 earth](https://github.com/abhayrobotics/-24-Days-24-JavaScript-Projects-/assets/58120166/9956af8e-59e3-431d-a59a-5a9fa541be4e)
+
