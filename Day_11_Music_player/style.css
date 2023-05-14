@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -8,26 +11,40 @@
 :root {
     /* *color */
     /* *ight mode */
-    /* --bg-color: #fff
+    --bg-color: #fff;
     --bg2-color: #fafafa;
     --text-color: #1b1b1b;
-    --subtext_color: #1e1e1e; */
+    --subtext_color: #1e1e1e;
     
     /* *dark mode */
     --bg-color: #121212;
     --bg2-color: #1e1e1e;
+    --bg2-color: #1f1f1f;
     --text-color: #e1e1e1;
     --subtext_color: #9c9c9c;
 
     /** text style */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    --font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 
 body {
     font-size: 16px;
+    font-family: var(--font-family);
 }
 
+/* **********************Reusable css */
+a{
+    text-decoration: none;
+}
+i{
+    color: var(--text-color);
+    font-size: 1.75rem;
+    background-color: var(--bg-color);
+    /* margin: 0.5rem; */
+    padding:0.35rem;
+    border-radius: 50%;
+}
 /* **********************dashoboard */
 
 .background {
@@ -51,13 +68,30 @@ body {
 }
 
 /* **********************player */
-.player {
+.player{
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+  
+    /* border: 1px solid red; */
+   
+}
+.card {
     background-color: var(--bg2-color);
-    width: 40%;
-    min-width: 400px;
+    /* width: 40%; */
+    min-width: 430px;
     height: 500px;
+    padding: 1rem;
+    /* box-shadow: 3px 3px 10px  rgb(105, 104, 104); */
+    /* margin: 1rem; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
     
 }
-
-
+.header__icons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 /* **********************Music list */
