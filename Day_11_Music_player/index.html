@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.2.0/remixicon.css" integrity="sha512-eRbcr5kt0vg2Kgl5BBKIqXoZ0f1lpe4ImM8GyzJN7mrhUR57xPh2JX+5Ra8zlh5QZWxEVQW9MOfMaCEEjnMcMA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./asset/remixicon.ttf">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.2.0/remixicon.css"
+        integrity="sha512-eRbcr5kt0vg2Kgl5BBKIqXoZ0f1lpe4ImM8GyzJN7mrhUR57xPh2JX+5Ra8zlh5QZWxEVQW9MOfMaCEEjnMcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Music Player</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <section class="background">
         <div class="heading">Music Player </div>
-        <div class="player ">
+        <div class="player " >
 
             <div class="music card">
                 <div class="header__icons">
                     <a href="#">
                         <i class="ri-arrow-down-s-line"></i>
-                       
+
                     </a>
                     <a href="#">
                         <i class="ri-list-check"></i>
@@ -29,22 +32,26 @@
                 <div class="music__poster"> </div>
                 <div class="music__artist">
                     <h3>Love You Zindagi</h3>
-                    <h4>Amit Trevedi  |  Dear Zindagi</h4>
-                   
+                    <h4>Amit Trevedi | Dear Zindagi</h4>
+
                 </div>
                 <div class="music__scroll">
                     <input type="range" name="" id="">
                 </div>
+                
                 <div class="music__controls">
-                    <a href="#">
-                        <i class="ri-skip-left-fill"></i>
-                    </a>
-                    <a href="#">
-                        <i class="ri-pause-line"></i>
-                    </a>
-                    <a href="#">
-                        <i class="ri-skip-right-fill"></i>
-                    </a>
+
+                    <i class="ri-shuffle-line"></i>                    
+
+                    <i class="ri-skip-left-fill"></i>
+
+                    <i class="ri-play-fill" onclick="Play()" id="play"></i>
+                    <i class="ri-pause-line hide"  onclick="Pause()" id="pause"></i>
+
+                    <i class="ri-skip-right-fill" onclick="Next()"></i>
+
+                    <i class="ri-volume-up-fill" onclick="Volume()"></i>
+
                 </div>
             </div>
 
@@ -56,4 +63,5 @@
 
     <script src="./main.js"></script>
 </body>
+
 </html>

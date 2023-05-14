@@ -66,7 +66,9 @@ i{
     padding-bottom: 0.75rem;
     /* border: 1px solid red; */
 }
-
+.hide{
+    display: none;
+}
 /* **********************player */
 .player{
     display: flex;
@@ -89,6 +91,7 @@ i{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    /* border: 1px solid red; */
     
 }
 .header__icons{
@@ -105,6 +108,7 @@ i{
     background-position: center;
     background-size: cover;
     border-radius: 20px;
+    /* border-radius: 50%; */
 }
 .music__artist{
     color: var(--subtext_color);
@@ -121,7 +125,6 @@ i{
 }
 .music__scroll{
 
-    /* border: 1px solid red; */
     width: 80%;
 }
 .music__scroll input {
@@ -131,7 +134,11 @@ i{
     height: 5px;
     width: 100%;
 }
-.music__controls a{
-    margin: 0 1.5rem;
+.music__controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
 }
+
 /* **********************Music list */
