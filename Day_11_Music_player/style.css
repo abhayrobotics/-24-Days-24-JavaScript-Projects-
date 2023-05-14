@@ -76,6 +76,7 @@ i{
     /* border: 1px solid red; */
    
 }
+
 .card {
     background-color: var(--bg2-color);
     /* width: 40%; */
@@ -86,7 +87,7 @@ i{
     /* margin: 1rem; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     
 }
@@ -116,15 +117,19 @@ i{
     font-size: 1rem;
 }
 .music__controls {
-    /* border: 1px solid red; */
     margin: 1.5rem 0;
 }
 .music__scroll{
-    background-color:  var(--text-color);
+
+    /* border: 1px solid red; */
     width: 80%;
+}
+.music__scroll input {
+    background-color:  var(--text-color);
     border-radius: 10px;
     margin: 0.5rem;
-    height: 3px;
+    height: 5px;
+    width: 100%;
 }
 .music__controls a{
     margin: 0 1.5rem;
