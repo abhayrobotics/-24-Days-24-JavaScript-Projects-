@@ -32,3 +32,5 @@
 ## Day-10 [3d Earth](https://abhayrobotics3dearth.netlify.app/)
 ![day 10 earth](https://github.com/abhayrobotics/-24-Days-24-JavaScript-Projects-/assets/58120166/9956af8e-59e3-431d-a59a-5a9fa541be4e)
 
+## Day-11 [Music Player](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_11_Music_player/index.html)
+![Music Player](https://github.com/abhayrobotics/-24-Days-24-JavaScript-Projects-/assets/58120166/5b9ac6a6-12b5-4bc1-b96b-089fea46f4e3)
