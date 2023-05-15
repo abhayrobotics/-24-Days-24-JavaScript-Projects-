@@ -39,8 +39,7 @@ let poster= document.getElementsByClassName('music__poster');
 
 for(item in playlist){
     if (playlist[item].currentTrack == true){
-        console.log(playlist[item])
-        console.log(item)
+        
         track =item;
 
     }
@@ -55,7 +54,7 @@ let pause = document.getElementById('pause');
 // play function
 function Play() {
     music.play()
-    console.log("play");
+    // console.log("play");
     play.classList.toggle('hide');
     pause.classList.toggle('hide');
 
@@ -65,7 +64,7 @@ function Play() {
 // console.log(music.duration)
 
 function Pause() {
-    console.log("pause");
+    // console.log("pause");
     music.pause();
     play.classList.toggle('hide');
     pause.classList.toggle('hide');
@@ -74,17 +73,27 @@ function Pause() {
 // next 
 function Next() {
     music.pause()
-    console.log("next");
-    track +=1;
-    update();
-    // changing current track
-    music = new Audio ((playlist[track].url));
-    music.play()
+    // console.log("next");
+    if(track == playlist.length - 1 ){
+        track =0;
+    }
+    else{
+        track +=1;
+    }
+        update();
+        // changing current track
+        music = new Audio ((playlist[track].url));
+        music.play()
 }
 function Previous() {
     music.pause()
-    console.log("next");
-    track -=1;
+    // console.log("next");
+    if(track == 0 ){
+        track = playlist.length-1;
+    }
+    else{
+        track -=1;
+    }
     update();
     // changing current track
     music = new Audio ((playlist[track].url));
@@ -93,13 +102,13 @@ function Previous() {
 
 function Volume() {
     music.volume = music.volume - 0.1;
-    console.log(music.volume)
+    // console.log(music.volume)
 }
 
 function update(){
-    console.log("update");
+    // console.log("update");
     track =parseInt(track);
-    console.log(playlist[track].poster)
+    // console.log(playlist[track].poster)
     
     document.getElementById("song_name").innerText = playlist[track].song_name;
     document.getElementById('artist').innerText =  playlist[track].artist;
