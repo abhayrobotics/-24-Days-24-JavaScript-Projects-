@@ -44,6 +44,7 @@ i{
     /* margin: 0.5rem; */
     padding:0.35rem;
     border-radius: 50%;
+    cursor: pointer;
 }
 /* **********************dashoboard */
 
@@ -99,13 +100,14 @@ i{
     justify-content: space-between;
     width: 100%;
 }
-.music__poster{
+#music__poster{
     margin:1rem 0;
     width: 80%;
     height: 60%;
     overflow: hidden;
-    background: url('./asset/img/1.jpg');
+    background-image: url('./asset/img/1.jpg');
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     border-radius: 20px;
     /* border-radius: 50%; */
@@ -113,12 +115,15 @@ i{
 .music__artist{
     color: var(--subtext_color);
     text-align: center;
+  
 }
 .music__artist h3{
     font-size: 1.2rem;
+    font-weight: 400;
 }
 .music__artist h4{
     font-size: 1rem;
+    font-weight: 300;
 }
 .music__controls {
     margin: 1.5rem 0;
