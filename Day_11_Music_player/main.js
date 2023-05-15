@@ -54,7 +54,7 @@ let pause = document.getElementById('pause');
 // play function
 function Play() {
     music.play();
-    console.log(music.duration)
+    // console.log(music.duration)
     // console.log("play");
     play.classList.toggle('hide');
     pause.classList.toggle('hide');
@@ -112,6 +112,8 @@ function Volume(i) {
 
 function update(){
     // console.log("update");
+    play.classList.add('hide');
+    pause.classList.remove('hide');
     track =parseInt(track);
     // console.log(playlist[track].poster)
     
@@ -131,7 +133,7 @@ function time(){
 
         document.getElementById('initial').innerText = min0.toString().padStart(2,"0") +":" +  sec0.toString().padStart(2,"0");
         document.getElementById('total').innerText = min1.toString().padStart(2,"0") +":" + sec1.toString().padStart(2,"0");
-
+        // percent of playing
         document.getElementById('input_scroll').value = (music.currentTime /music.duration)*100;
     },1000)
 }

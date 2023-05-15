@@ -88,7 +88,7 @@ i:hover{
 .card {
     background-color: var(--bg2-color);
     /* width: 40%; */
-    width: 430px;
+    width: 400px;
     height: 500px;
     padding: 1rem;
     /* box-shadow: 3px 3px 10px  rgb(105, 104, 104); */
@@ -157,3 +157,16 @@ i:hover{
 }
 
 /* **********************Music list */
+
+@media screen and (max-width:455px) {
+    .card{
+        width: 330px;
+    }
+    
+}
+@media screen and (max-width:340px) {
+    .card{
+        width: 250px;
+    }
+    
+}
