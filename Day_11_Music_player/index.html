@@ -17,10 +17,13 @@
     <section class="background">
         <div class="heading">Music Player </div>
         <div class="player " >
+            <!-- <div class="music__list card">
+
+            </div> -->
 
             <div class="music card">
                 <div class="header__icons">
-                    <a href="#">
+                    <a href="#" title ="Increase" >
                         <i class="ri-arrow-down-s-line"></i>
 
                     </a>
@@ -36,12 +39,16 @@
 
                 </div>
                 <div class="music__scroll">
-                    <input type="range" name="" id="">
+                    <input type="range" name="" id="input_scroll" value="0">
+                    <div class="time">
+                        <span id="initial">00:00</span>
+                        <span id="total">00:00</span>
+                    </div>
                 </div>
                 
                 <div class="music__controls">
 
-                    <i class="ri-shuffle-line"></i>                    
+                    <i class="ri-volume-down-fill" onclick="Volume(-1)"></i>                 
 
                     <i class="ri-skip-left-fill" onclick="Previous()"></i>
 
@@ -50,14 +57,12 @@
 
                     <i class="ri-skip-right-fill" onclick="Next()"></i>
 
-                    <i class="ri-volume-up-fill" onclick="Volume()"></i>
+                    <i class="ri-volume-up-fill" onclick="Volume(1)"></i>
 
                 </div>
             </div>
 
-            <!-- <div class="music__list card">
-
-            </div> -->
+            
         </div>
     </section>
 

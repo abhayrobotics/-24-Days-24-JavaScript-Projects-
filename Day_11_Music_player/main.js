@@ -53,11 +53,13 @@ let pause = document.getElementById('pause');
 
 // play function
 function Play() {
-    music.play()
+    music.play();
+    console.log(music.duration)
     // console.log("play");
     play.classList.toggle('hide');
     pause.classList.toggle('hide');
 
+    time();
     
 
 }
@@ -83,7 +85,9 @@ function Next() {
         update();
         // changing current track
         music = new Audio ((playlist[track].url));
-        music.play()
+        music.play();
+        time();
+        
 }
 function Previous() {
     music.pause()
@@ -98,10 +102,11 @@ function Previous() {
     // changing current track
     music = new Audio ((playlist[track].url));
     music.play()
+    time();
 }
 
-function Volume() {
-    music.volume = music.volume - 0.1;
+function Volume(i) {
+    music.volume = music.volume + 0.1*i ;
     // console.log(music.volume)
 }
 
@@ -116,4 +121,17 @@ function update(){
     let poster = document.getElementById('music__poster');
     poster.style.backgroundImage =`url('${playlist[track].poster}')`
     
+}
+function time(){
+    setInterval(() => {
+        let min0 =  Math.round(music.currentTime / 60);
+        let sec0 =  Math.round(music.currentTime  % 60);
+        let min1 =  Math.round(music.duration / 60);
+        let sec1 =  Math.round(music.duration  % 60);
+
+        document.getElementById('initial').innerText = min0.toString().padStart(2,"0") +":" +  sec0.toString().padStart(2,"0");
+        document.getElementById('total').innerText = min1.toString().padStart(2,"0") +":" + sec1.toString().padStart(2,"0");
+
+        document.getElementById('input_scroll').value = (music.currentTime /music.duration)*100;
+    },1000)
 }

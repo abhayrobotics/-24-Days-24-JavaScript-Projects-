@@ -45,6 +45,11 @@ i{
     padding:0.35rem;
     border-radius: 50%;
     cursor: pointer;
+    transition-duration: 0.5s;
+}
+i:hover{
+    color: var(--bg-color);
+    background-color: var(--text-color);
 }
 /* **********************dashoboard */
 
@@ -138,6 +143,11 @@ i{
     margin: 0.5rem;
     height: 5px;
     width: 100%;
+}
+.time{
+    display: flex;
+    justify-content: space-between;
+    color: var(--subtext_color);
 }
 .music__controls{
     display: flex;
