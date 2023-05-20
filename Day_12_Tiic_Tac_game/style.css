@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --bg-color:#14bdac;
+    --bg-color: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+    --bg2-color:#0da192;
+}
 body{
     font-size: 16px;
     overflow: hidden;
@@ -14,6 +19,8 @@ section{
     height: 100vh;
     /* height: 100svh; */
     background: linear-gradient(90deg, hsla(175, 79%, 63%, 1) 0%, hsla(82, 96%, 57%, 1) 100%);
+    background: var(--bg-color);
+   
 }
 .heading{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,36 +29,32 @@ section{
     padding: 0.75rem;
 }
 .board{
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
     
 }
-.pattern{
-    width: auto;
-    align-self: center;
-    width: 240px;
-    overflow: hidden;
-    border: 1px solid black;
-    background-color: rgb(231, 197, 197);
-   
-}
-.row{
-    display: flex;
-    /* flex-direction: row; */
-    justify-content: center;
-    align-items: center;
-    /* gap:5px; */
-}
+
+
 table{
-    width: 200px;
+    align-self: center;
+    
+    width: 400px;
+    height: 400px;
+    background-color:transparent;
+    border-spacing: 10px;
 }
-.block{
+.block{ 
                      
-    /* border:1px solid red; */
-    background-color: aqua;
-    margin:0 0.5rem 0.5rem 0;
-    /* width: 64px; */
-    height:64px;
+    border:1px solid red;
+    background-color: transparent;
+    margin:0.5rem;
+    text-align: center;
+    padding: 0.25rem;
+   
 }
