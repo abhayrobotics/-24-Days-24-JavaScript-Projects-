@@ -1,10 +1,7 @@
 
-console.log('check')
-let board = document.getElementById('board')
-let block = document.getElementsByClassName('block');
 let cross_chance = true;
 let counter = 0;
-let winner = [
+let winner_outcome = [
     [0, 1, 2],
     [2, 3, 4],
     [5, 6, 7],
@@ -19,7 +16,7 @@ let items = ['item0', 'item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'ite
 
 // selecting the elemetn on which click is happen
 window.onclick = e => {
-    console.log(e.target.id);
+    // console.log(e.target.id);
     let item = e.target;
 
     // if clicked in any item of array
@@ -39,6 +36,7 @@ window.onclick = e => {
                 cross.push(item.id.slice(4, 5))
                 // convert to string
                 sessionStorage.setItem('cross_position', JSON.stringify(cross));
+               
             }
             else {
                 // fetching data and converting to object
@@ -48,6 +46,8 @@ window.onclick = e => {
                 cross.push(item.id.slice(4, 5));
                 // conver to string and save in session storage
                 sessionStorage.setItem('cross_position', JSON.stringify(cross));
+                // check winner
+                Winner();
             }
 
         }
@@ -73,7 +73,34 @@ window.onclick = e => {
                 cross.push(item.id.slice(4, 5));
                 // conver to string and save in session storage
                 sessionStorage.setItem('circle_position', JSON.stringify(cross));
+                // check winner
+                Winner();
             }
         }
     }
+}
+
+function Winner(){
+   let  cross = JSON.parse(sessionStorage.getItem('cross_position'))
+   let  circle = JSON.parse(sessionStorage.getItem('circle_position'))
+    // console.log(typeof  circle);
+
+    // console.log(circle[0]);
+    // checking for all outcome
+    for (const result in winner_outcome){
+        console.log(winner_outcome[result])
+        let counter = 0;
+        // checking for 2st rwinner outcome
+        for (const item in cross){
+            for(const i=0; i<3;i++){
+
+                if( winner_outcome[result][i] == cross[item]  ){
+                    counter++;
+                }
+            }
+
+            
+        }
+    }
+    return;
 }
