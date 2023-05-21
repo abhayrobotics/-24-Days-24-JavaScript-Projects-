@@ -86,11 +86,11 @@ function Winner() {
 
     // checking for all outcome
     // foreach winning outcome check 
+    let winner = false;
     winner_outcome.forEach(element => {
         // console.log(element);
         let c = 0;
         let counter_circle=0
-        let winner = false;
         for (let i = 0; i < 3; i++) {
 
             // check for cross

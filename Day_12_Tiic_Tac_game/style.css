@@ -155,6 +155,69 @@ i{
     padding-top: 2rem;
 }
 
+.design1{
+    position: absolute;
+    top: 500px;
+    opacity: 0.5;
+    width: fit-content;
+    animation: rotate1 8s steps(6) infinite;
+    
+}
+.design2{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    opacity: 0.5;
+   
+    /* border: 1px solid red; */
+    animation: rotate1 5s steps(6) infinite;
+
+}
+.design3{
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+    opacity: 0.2;
+    animation: animate2  4s  ease-in-out infinite;
+}
+.design3 i{
+    font-size: 120px ;
+
+}
+.big-cross{
+    font-size: 100px;
+}
+@keyframes rotate1 {
+    0%{
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: rotate(370deg);
+    }
+    
+}
+@keyframes animate2 {
+    0%{
+        transform: translateY(0px);
+    }
+    35%{
+        transform: translateY(-80px);
+        /* opacity: 1; */
+    }
+    70%{
+        transform: translateY(0px);
+    }
+    85%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+    
+}
+
+
+
 @media screen and (max-width:425px){
     :root{
         --block-size:80px;
@@ -165,7 +228,9 @@ i{
     height:  330px;
     /* background-color: red; */
    }
-   
+   .design1,.design2,.design3{
+    display: none;
+   }
     
 }
 @media screen and (max-width:350px){
