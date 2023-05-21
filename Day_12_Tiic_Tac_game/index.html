@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.3.0/remixicon.css" integrity="sha512-0JEaZ1BDR+FsrPtq5Ap9o05MUwn8lKs2GiCcRVdOH0qDcUcCoMKi8fDVJ9gnG8VN1Mp/vuWw2sMO0SQom5th4g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.3.0/remixicon.css"
+        integrity="sha512-0JEaZ1BDR+FsrPtq5Ap9o05MUwn8lKs2GiCcRVdOH0qDcUcCoMKi8fDVJ9gnG8VN1Mp/vuWw2sMO0SQom5th4g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <section>
         <div class="heading">Tic Tac Toe</div>
-        <div class="score" id="score"></div>
+        <div class="game__details">
+
+            <a href="./">
+                <div class="new" id="new" onclick="NewGame()">New Game</div>
+            </a>
+            <div class="score" id="score">Score:</div>
+        </div>
         <div class="board">
-           
-           
+
+
             <table id="board">
                 <tr>
                     <td class="block" id="item0"></td>
                     <td class="block" id="item1"></td>
                     <td class="block" id="item2"></td>
-                    
+
                 </tr>
-               
+
                 <tr>
                     <td class="block" id="item3"> </td>
                     <td class="block " id="item4"> </td>
                     <td class="block" id="item5"> </td>
-                    
+
                 </tr>
-               
+
                 <tr>
                     <td class="block" id="item6"> </td>
                     <td class="block" id="item7"> </td>
-                    <td class="block" id="item8" > </td>
-                    
+                    <td class="block" id="item8"> </td>
+
                 </tr>
-               
+
             </table>
         </div>
         <script src="./main.js"></script>
     </section>
 </body>
+
 </html>

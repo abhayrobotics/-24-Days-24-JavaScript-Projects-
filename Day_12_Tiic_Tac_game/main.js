@@ -3,13 +3,13 @@ let cross_chance = true;
 let counter = 0;
 let winner_outcome = [
     [0, 1, 2],
-    [2, 3, 4],
-    [5, 6, 7],
-    [0, 2, 5],
-    [1, 3, 6],
-    [2, 4, 7],
-    [0, 3, 7],
-    [2, 3, 5]
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
 ]
 let items = ['item0', 'item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8']
 
@@ -36,7 +36,7 @@ window.onclick = e => {
                 cross.push(item.id.slice(4, 5))
                 // convert to string
                 sessionStorage.setItem('cross_position', JSON.stringify(cross));
-               
+
             }
             else {
                 // fetching data and converting to object
@@ -57,8 +57,8 @@ window.onclick = e => {
             item.innerHTML = `<i class="ri-checkbox-blank-circle-line circle"></i>`;
             cross_chance = true;
 
-             // item stoarge
-             if (sessionStorage.getItem('circle_position') == null) {
+            // item stoarge
+            if (sessionStorage.getItem('circle_position') == null) {
 
                 let cross = [];
                 cross.push(item.id.slice(4, 5))
@@ -80,27 +80,78 @@ window.onclick = e => {
     }
 }
 
-function Winner(){
-   let  cross = JSON.parse(sessionStorage.getItem('cross_position'))
-   let  circle = JSON.parse(sessionStorage.getItem('circle_position'))
-    // console.log(typeof  circle);
+function Winner() {
+    let cross = JSON.parse(sessionStorage.getItem('cross_position'))
+    let circle = JSON.parse(sessionStorage.getItem('circle_position'))
 
-    // console.log(circle[0]);
     // checking for all outcome
-    for (const result in winner_outcome){
-        console.log(winner_outcome[result])
-        let counter = 0;
-        // checking for 2st rwinner outcome
-        for (const item in cross){
-            for(const i=0; i<3;i++){
+    // foreach winning outcome check 
+    winner_outcome.forEach(element => {
+        // console.log(element);
+        let c = 0;
+        let counter_circle=0
 
-                if( winner_outcome[result][i] == cross[item]  ){
-                    counter++;
+        for (let i = 0; i < 3; i++) {
+
+            // check for cross
+            for (const item in cross) {
+                if (element[i] == cross[item]) {
+                    c += 1;
+                    
+                    // if cross section matches with winning outcome
+                    if (c == 3) {
+                        console.log("winner is cross", element);
+                        sessionStorage.clear();
+                    }
+                    break;
                 }
             }
-
-            
+            // check for circle
+            for (const item in circle) {
+                if (element[i] == circle[item]) {
+                    counter_circle += 1;
+                    
+                    // if cross section matches with winning outcome
+                    if (counter_circle == 3) {
+                        console.log("winner is circle", element);
+                        sessionStorage.clear();
+                    }
+                    break;
+                }
+            }
         }
-    }
+
+    });
+
     return;
 }
+
+function NewGame(){
+    sessionStorage.clear();
+    
+}
+// cross = ["2", '5', '4', '3']
+// // foreach winning outcome check 
+// winner_outcome.forEach(element => {
+//     // console.log(element);
+//     let c = 0;
+
+//     for (let i = 0; i < 3; i++) {
+
+//         for (const item in cross) {
+
+//             if (element[i] == cross[item]) {
+//                 // console.log("counter",c, element[i],cross[item])
+
+//                 c += 1;
+//                 // console.log("match");
+//                 // if cross section matches with winning outcome
+//                 if (c == 3) {
+//                     console.log("winner", element)
+//                 }
+//                 break;
+//             }
+//         }
+//     }
+
+// });

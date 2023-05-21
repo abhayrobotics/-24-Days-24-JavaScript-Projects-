@@ -5,7 +5,7 @@
 }
 :root{
     --bg-color:#14bdac;
-    --bg-color: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+    --bg-color: linear-gradient(135deg, #FC466B 0%, #3F5EFB 100%);
     --bg2-color:#0da192;
 }
 body{
@@ -18,7 +18,7 @@ section{
     /* width: 100svw; */
     height: 100vh;
     /* height: 100svh; */
-    background: linear-gradient(90deg, hsla(175, 79%, 63%, 1) 0%, hsla(82, 96%, 57%, 1) 100%);
+    background: linear-gradient(45deg, hsla(175, 79%, 63%, 1) 0%, hsla(82, 96%, 57%, 1) 100%);
     background: var(--bg-color);
    
 }
@@ -46,22 +46,37 @@ table{
     
     width: 400px;
     height: 400px;
-    background-color:transparent;
-    border-spacing: 10px;
+    /* border : 5px solid var(--bg2-color); */
+    border-spacing: 0px;
 }
 .block{ 
                      
-    border:1px solid red;
+    /* border:1px solid red; */
+    border : 5px solid var(--bg2-color);
     background-color: transparent;
-    margin:0.5rem;
+    /* margin:0.5rem; */
     text-align: center;
-    padding: 0.25rem;
+    /* padding: 0.25rem; */
     width: 120px;
     height: 120px;
     cursor: pointer;
     transition-duration: 0.5s;
    
 }
+.block:first-child,
+.block:nth-child(2),
+.block:nth-child(3)
+{
+    /* border-top: 0px; */
+}
+.block:last-child{
+
+    border-bottom: 0px;
+}
+
+
+
+
 .hr-border{
     margin: 0.25rem 0;
     background-color: var(--bg2-color);
