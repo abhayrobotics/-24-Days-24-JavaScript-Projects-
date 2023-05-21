@@ -9,6 +9,9 @@
     --bg2-color:#0da192;
     --bg2-color:#4e0845;
     --bg-winner: #5ee47f;
+
+    --block-size:120px;
+    --mark-size:80px
 }
 body{
     font-size: 16px;
@@ -88,8 +91,8 @@ table{
     /* margin:0.5rem; */
     text-align: center;
     /* padding: 0.25rem; */
-    width: 120px;
-    height: 120px;
+    width: var(--block-size);
+    height:var(--block-size);
     cursor: pointer;
     transition-duration: 0.5s;
    
@@ -122,11 +125,11 @@ td:last-child{
 }
 i{
     /* border:1px solid red; */
-    font-size: 80px;
+    font-size: var(--mark-size);
     font-weight: 600;
 }
 .circle{
-    font-size: 70px;
+    font-size: calc( var(--mark-size) - 10px)
 }
 .cross,
 .circle{
@@ -150,4 +153,31 @@ i{
     text-align: center;
     padding: 0.5rem;
     padding-top: 2rem;
+}
+
+@media screen and (max-width:425px){
+    :root{
+        --block-size:80px;
+        --mark-size:70px;
+    }
+   table{
+    width: 330px;
+    height:  330px;
+    /* background-color: red; */
+   }
+   
+    
+}
+@media screen and (max-width:350px){
+    :root{
+        --block-size:70px;
+        --mark-size:60px;
+    }
+   table{
+    width: 270px;
+    height:  270px;
+    /* background-color: red; */
+   }
+ 
+    
 }

@@ -90,17 +90,18 @@ function Winner() {
         // console.log(element);
         let c = 0;
         let counter_circle=0
-
+        let winner = false;
         for (let i = 0; i < 3; i++) {
 
             // check for cross
             for (const item in cross) {
                 if (element[i] == cross[item]) {
                     c += 1;
-                    console.log(cross.length)
+                    // console.log(cross.length);
                     // if cross section matches with winning outcome
                     if (c == 3) {
                         // console.log("winner is cross", element);
+                        winner = true;
                         document.getElementById('winner_comment').innerHTML=  " Winner !"
                         document.getElementById(`item${element[0]}`).classList.add('show');
                         document.getElementById(`item${element[1]}`).classList.add('show');
@@ -117,6 +118,7 @@ function Winner() {
                     
                     // if cross section matches with winning outcome
                     if (counter_circle == 3) {
+                        winner = true;
                         // console.log("winner is circle", element);
                         document.getElementById('winner_comment').innerHTML=  " Winner !"
                         document.getElementById(`item${element[0]}`).classList.add('show');
@@ -129,7 +131,8 @@ function Winner() {
             }
         }
         // even with all input no result mactching winner outcome
-        if(c != 3 && cross.length ==5){
+        console.log(cross.length)
+        if((winner == false) && (cross.length == 5) ){
             document.getElementById('winner_comment').innerHTML=  " Draw !"
         }
 
@@ -142,28 +145,3 @@ function NewGame(){
     sessionStorage.clear();
     
 }
-// cross = ["2", '5', '4', '3']
-// // foreach winning outcome check 
-// winner_outcome.forEach(element => {
-//     // console.log(element);
-//     let c = 0;
-
-//     for (let i = 0; i < 3; i++) {
-
-//         for (const item in cross) {
-
-//             if (element[i] == cross[item]) {
-//                 // console.log("counter",c, element[i],cross[item])
-
-//                 c += 1;
-//                 // console.log("match");
-//                 // if cross section matches with winning outcome
-//                 if (c == 3) {
-//                     console.log("winner", element)
-//                 }
-//                 break;
-//             }
-//         }
-//     }
-
-// });
