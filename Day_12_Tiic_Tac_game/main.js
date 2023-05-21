@@ -97,10 +97,14 @@ function Winner() {
             for (const item in cross) {
                 if (element[i] == cross[item]) {
                     c += 1;
-                    
+                    console.log(cross.length)
                     // if cross section matches with winning outcome
                     if (c == 3) {
-                        console.log("winner is cross", element);
+                        // console.log("winner is cross", element);
+                        document.getElementById('winner_comment').innerHTML=  " Winner !"
+                        document.getElementById(`item${element[0]}`).classList.add('show');
+                        document.getElementById(`item${element[1]}`).classList.add('show');
+                        document.getElementById(`item${element[2]}`).classList.add('show');
                         sessionStorage.clear();
                     }
                     break;
@@ -113,12 +117,20 @@ function Winner() {
                     
                     // if cross section matches with winning outcome
                     if (counter_circle == 3) {
-                        console.log("winner is circle", element);
+                        // console.log("winner is circle", element);
+                        document.getElementById('winner_comment').innerHTML=  " Winner !"
+                        document.getElementById(`item${element[0]}`).classList.add('show');
+                        document.getElementById(`item${element[1]}`).classList.add('show');
+                        document.getElementById(`item${element[2]}`).classList.add('show');
                         sessionStorage.clear();
                     }
                     break;
                 }
             }
+        }
+        // even with all input no result mactching winner outcome
+        if(c != 3 && cross.length ==5){
+            document.getElementById('winner_comment').innerHTML=  " Draw !"
         }
 
     });

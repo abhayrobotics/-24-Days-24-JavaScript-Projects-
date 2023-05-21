@@ -7,10 +7,13 @@
     --bg-color:#14bdac;
     --bg-color: linear-gradient(135deg, #FC466B 0%, #3F5EFB 100%);
     --bg2-color:#0da192;
+    --bg2-color:#4e0845;
+    --bg-winner: #5ee47f;
 }
 body{
     font-size: 16px;
     overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 section{
     border: 1px solid red;
@@ -20,6 +23,8 @@ section{
     /* height: 100svh; */
     background: linear-gradient(45deg, hsla(175, 79%, 63%, 1) 0%, hsla(82, 96%, 57%, 1) 100%);
     background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
    
 }
 .heading{
@@ -28,6 +33,30 @@ section{
     text-align: center;
     padding: 0.75rem;
 }
+.game__details{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    /* justify-content: center; */
+    /* margin: 20px; */
+    margin-left: 20px;
+    /* border: 1px solid red; */
+}
+.new{
+    color: #fff;
+    font-size: 20px;
+    padding: 0.25rem 0.75rem;
+    border-radius: 5px;
+    background-color: #4e0845;
+    width: fit-content;
+    /* text-align: center; */
+}
+.new:hover{
+   color: rgb(112, 96, 255);
+}
 .board{
     /* border: 1px solid green; */
     display: flex;
@@ -35,7 +64,7 @@ section{
     flex-wrap: wrap;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 55%;
     transform: translate(-50%,-50%);
     
 }
@@ -52,8 +81,10 @@ table{
 .block{ 
                      
     /* border:1px solid red; */
-    border : 5px solid var(--bg2-color);
+    border : 3px solid var(--bg2-color);
+    /* border-radius: 10px ; */
     background-color: transparent;
+
     /* margin:0.5rem; */
     text-align: center;
     /* padding: 0.25rem; */
@@ -63,19 +94,27 @@ table{
     transition-duration: 0.5s;
    
 }
-.block:first-child,
-.block:nth-child(2),
-.block:nth-child(3)
+tr:first-child .block
 {
-    /* border-top: 0px; */
+    border-top: 0px;
 }
-.block:last-child{
-
+tr:last-child .block
+{
     border-bottom: 0px;
 }
 
+td:first-child{
+    border-left: 0px;
+   
+    z-index: -1;
+}
+td:last-child{
+    border-right: 0px;
+}
 
-
+.show{
+    background-color: #5ee47f;
+}
 
 .hr-border{
     margin: 0.25rem 0;
@@ -103,4 +142,12 @@ i{
   
 }
     
+}
+.winner_comment{
+    font-size: 32px;
+    height: 50px;
+    font-weight: 500;
+    text-align: center;
+    padding: 0.5rem;
+    padding-top: 2rem;
 }
