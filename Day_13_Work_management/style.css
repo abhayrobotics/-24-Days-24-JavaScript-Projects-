@@ -1,0 +1,55 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+   
+}
+:root{
+    --bg-color:#e1e1e1;
+    --bg-color2:rgb(184, 78, 178);
+}
+body{
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.board{
+     background-color: var(--bg-color);
+     width:100vw;
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+
+}
+.heading{
+    font-size: 2rem;
+}
+.todo{
+    background-color: var(--bg-color2);
+    width:300px;
+    height: 400px;
+    
+}
+
+.top-bar{
+    display: flex;
+    margin:0.5rem;
+    
+}
+.add_item{
+    outline: none;
+    border: none;
+    border-radius: 0.4rem;
+    width: 100%;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    padding: 0.25rem;
+    font-size: 1.3rem;
+}
+.add-button{
+    border: 1px solid red;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+}

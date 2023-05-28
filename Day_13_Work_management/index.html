@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <section class="board">
+
+        <div class="heading">A List</div>
+        <div class="todo">
+            <div class="top-bar">
+                <input type="text" name=""class= add_item id="">
+                <div class="add-button">Add</div>
+            </div>
+            <div class="todo-item">
+                <div class="new-item">Onlin course</div>
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+    <script src="./main.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
+
+        import { GoogleAuthProvider } from "firebase/auth";
+
+        const provider = new GoogleAuthProvider();
+        provider.addScope('https://www.googleapis.com/auth/contacts.readonly')
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAwNM_Mj_b0dIf4LYjhGAvBEcfJiqbrSVc",
+            authDomain: "achiever-list.firebaseapp.com",
+            projectId: "achiever-list",
+            storageBucket: "achiever-list.appspot.com",
+            messagingSenderId: "358906526047",
+            appId: "1:358906526047:web:2a4d4986bc36f525d89eea",
+            measurementId: "G-CTSHLYP90L"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+</body>
+
+</html>
