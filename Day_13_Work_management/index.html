@@ -6,21 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"
+        integrity="sha512-Eezs+g9Lq4TCCq0wae01s9PuNWzHYoCMkE97e2qdkYthpI0pzC3UGB03lgEHn2XM85hDOUF6qgqqszs+iXU4UA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <section class="board">
+        <nav class="navabar">
+            <div class="heading">A List</div>
 
-        <div class="heading">A List</div>
-        <div class="todo">
-            <div class="top-bar">
-                <input type="text" name=""class= add_item id="">
-                <div class="add-button">Add</div>
+        </nav>
+
+        <div class="card">
+            <div class="card-heading">Courses</div>
+
+            <div class="todo-item" id="todo-area">
+                <div class="new-item drag">Online course1</div>
+                <div class="new-item drag">Online course2</div>
+                <div class="new-item drag">Online course3</div>
+
             </div>
-            <div class="todo-item">
-                <div class="new-item">Onlin course</div>
 
+            <div class="add-bar">
+                <input type="text" name="" class=add_item id="">
+                <div class="add-button">Add</div>
             </div>
 
         </div>
@@ -30,7 +41,7 @@
     </section>
 
     <script src="./main.js"></script>
-    <script type="module">
+    <!-- <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
@@ -57,7 +68,7 @@
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
+        const analytics = getAnalytics(app); -->
     </script>
 </body>
 
