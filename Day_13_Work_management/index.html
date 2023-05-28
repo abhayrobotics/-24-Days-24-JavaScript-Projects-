@@ -19,7 +19,7 @@
 
         </nav>
 
-        <div class="card">
+        <div class="card" id="card">
             <div class="card-heading">Courses</div>
 
             <div class="todo-item" id="todo-area">
@@ -29,10 +29,11 @@
 
             </div>
 
-            <div class="add-bar">
-                <input type="text" name="" class=add_item id="">
-                <div class="add-button">Add</div>
+            <div class="add-bar" id="add-bar">
+                <input type="text" name="" class=add_item id="" placeholder="Add new card">
+                <div class="add-button" onclick="AddItem() " id ='add'>Add</div>
             </div>
+            <!-- <div class="warning">Card cannot be blank</div> -->
 
         </div>
 
