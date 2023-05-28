@@ -6,41 +6,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"
-        integrity="sha512-Eezs+g9Lq4TCCq0wae01s9PuNWzHYoCMkE97e2qdkYthpI0pzC3UGB03lgEHn2XM85hDOUF6qgqqszs+iXU4UA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.3.0/remixicon.css"
+        integrity="sha512-0JEaZ1BDR+FsrPtq5Ap9o05MUwn8lKs2GiCcRVdOH0qDcUcCoMKi8fDVJ9gnG8VN1Mp/vuWw2sMO0SQom5th4g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <section class="board">
-        <nav class="navabar">
+        <nav class="navbar">
             <div class="heading">A List</div>
+            <div class="nav-options">
+                <div class="button new-card" onclick="NewWork()">New List</div>
+                <input type="text" name="" class="search-text" id="">
+                <div class="button search">Search</div>
+            </div>
 
         </nav>
+        <div class="lists">
 
-        <div class="card" id="card">
-            <div class="card-heading">Courses</div>
 
-            <div class="todo-item" id="todo-area">
-                <div class="new-item drag">Online course1</div>
-                <div class="new-item drag">Online course2</div>
-                <div class="new-item drag">Online course3</div>
+            <div class="card" id="card">
+                <div class="card-heading">
+                    <h3>To Do</h3> <i class="ri-draggable"></i>
+                </div>
+
+                <div class="todo-item" id="todo-area">
+                    <div class="new-item drag">
+                        <div class="title">Online course1</div>
+                        <i class="ri-close-circle-fill delete " delete="true"></i>
+                    </div>
+                    <div class="new-item drag">
+                        <div class="title">Online course2</div>
+                        <i class="ri-close-circle-fill delete " delete="true"></i>
+                    </div>
+                    <div class="new-item drag">
+                        <div class="title">Online course3</div>
+                        <i class="ri-close-circle-fill delete " delete="true"></i>
+                    </div>
+
+
+
+                </div>
+
+                <div class="add-bar" id="add-bar">
+                    <input type="text" name="" class=add_item id="" placeholder="Add new card">
+                    <div class="button" onclick="AddItem() " id='add'>Add</div>
+                </div>
 
             </div>
 
-            <div class="add-bar" id="add-bar">
-                <input type="text" name="" class=add_item id="" placeholder="Add new card">
-                <div class="add-button" onclick="AddItem() " id ='add'>Add</div>
-            </div>
-            <!-- <div class="warning">Card cannot be blank</div> -->
+            <div class="card" id="card">
+                <div class="card-heading">
+                    <h3>Doing</h3> <i class="ri-draggable"></i>
+                </div>
 
+                <div class="todo-item" id="doing-area">
+                    <div class="new-item drag">
+                        <div class="title">Online course1</div>
+                        <i class="ri-close-circle-fill delete " delete="true"></i>
+                    </div>
+                    <div class="new-item drag">
+                        <div class="title">Online course2</div>
+                        <i class="ri-close-circle-fill delete " delete="true"></i>
+                    </div>
+                    <div class="new-item drag">
+                        <div class="title">Online course3</div>
+                        <i class="ri-close-circle-fill delete " delete="true"></i>
+                    </div>
+
+
+
+                </div>
+
+                <div class="add-bar" id="add-bar">
+                    <input type="text" name="" class=add_item id="" placeholder="Add new card">
+                    <div class="button" onclick="AddItem() " id='add'>Add</div>
+                </div>
+
+            </div>
         </div>
+        <!-- <button class="cookie" id="cookie">Cookie</button> -->
 
 
 
     </section>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"
+        integrity="sha512-Eezs+g9Lq4TCCq0wae01s9PuNWzHYoCMkE97e2qdkYthpI0pzC3UGB03lgEHn2XM85hDOUF6qgqqszs+iXU4UA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./main.js"></script>
     <!-- <script type="module">
         // Import the functions you need from the SDKs you need

@@ -44,17 +44,46 @@ body {
     background: var(--bg-color);
     width: 100vw;
     height: 100vh;
+    padding:0rem  1rem;
+    border: 1px solid red;
     /* display: flex;
      justify-content: center;
      align-items: center;
      flex-direction: column; */
 
 }
+/* ********************************* Nav bar */
 
+.navbar{
+     border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.25rem 1rem;
+}
 .heading {
     font-size: var(--text-big)
 }
-
+.nav-options{
+       display: flex;
+    justify-content: right;
+    align-items: stretch;
+    gap: 1rem;
+    
+}
+.search-text{
+     outline: none;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: var(--text-normal);
+   
+       padding: 0.25rem 0.5rem;
+}
+/** **************************lists */
+.lists{
+    display: flex;
+    flex-wrap: wrap;
+}
 /** **************************card */
 
 .card {
@@ -72,6 +101,12 @@ body {
 .card-heading {
     margin: 0.5rem;
     padding: 0 0.5rem;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-heading h3{
     font-weight: 500;
     font-size: var(--text-normal);
 }
@@ -84,7 +119,16 @@ body {
     border-radius: 0.5rem;
     box-shadow: 2px 2px 5px var(--shadow);
     font-size: var(--text-small);
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title{
+    padding-right: 0.25rem;
+}
+.delete {
+    font-size: var(--text-medium);
+    color: rgb(187, 16, 16);
 }
 
 .add-bar {
@@ -105,14 +149,15 @@ body {
     width: 100%;
     /* height: 1.9rem; */
     margin-right: var(--mg-small);
-    padding: 0.25rem;
+    padding: 0.5rem;
+    /* margin: 0.5rem; */
     font-size: var(--text-small);
     color: var(--font-color);
     background-color: var(--tab-color);
     box-shadow: 2px 2px 5px var(--shadow);
 }
 
-.add-button {
+.button {
     /* border: 1px solid red; */
     padding: 0.25rem 0.5rem;
     border-radius: 0.5rem;
@@ -121,6 +166,7 @@ body {
     background-color: var(--box-color);
     cursor: pointer;
     margin: auto;
+     box-shadow: 2px 2px 5px var(--shadow);
 }
 
 .warning {
@@ -130,7 +176,7 @@ body {
     color: red;
     /* display: block; */
     animation: autohide 2s ease-in-out forwards;
-    
+
 }
 
 
