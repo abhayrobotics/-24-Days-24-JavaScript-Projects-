@@ -29,10 +29,10 @@
 
             <div class="card" id="card">
                 <div class="card-heading">
-                    <h3>To Do</h3> <i class="ri-draggable"></i>
+                    <h3 contenteditable="true"  class="title_text">To Do</h3> <i class="ri-draggable"></i>
                 </div>
 
-                <div class="todo-item" id="todo-area">
+                <div class="todo-item" id="list1">
                     <div class="new-item drag">
                         <div class="title">Online course1</div>
                         <i class="ri-close-circle-fill delete " delete="true"></i>
@@ -52,23 +52,28 @@
 
                 <div class="add-bar" id="add-bar">
                     <input type="text" name="" class=add_item id="" placeholder="Add new card">
-                    <div class="button" onclick="AddItem() " id='add'>Add</div>
+                    <div class="button add" onclick="AddItem('list1',1) " id='add1'>Add</div>
                 </div>
 
             </div>
 
             <div class="card" id="card">
                 <div class="card-heading">
-                    <h3>Doing</h3> <i class="ri-draggable"></i>
+                    <h3 contenteditable="true" class="title_text">Doing</h3> <i class="ri-draggable"></i>
                 </div>
 
-                <div class="todo-item" id="doing-area">
+                <div class="todo-item" id="list2">
+                    <div class="new-item drag">
+                        <div class="title">Online course1</div>
+                        <i class="ri-close-circle-fill delete " delete="true"></i>
+                    </div>
                    
                 </div>
 
                 <div class="add-bar" id="add-bar">
                     <input type="text" name="" class=add_item id="" placeholder="Add new card">
-                    <div class="button" onclick="AddItem() " id='add'>Add</div>
+                    <div class="button add" onclick="AddItem('list2',2)" id='add2'>Add</div>
+                    
                 </div>
 
             </div>

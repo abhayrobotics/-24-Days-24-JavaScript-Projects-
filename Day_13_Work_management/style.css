@@ -43,7 +43,7 @@ body {
     background: #1d976c;
     background: var(--bg-color);
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     padding:0rem  1rem;
     border: 1px solid red;
     /* display: flex;
@@ -105,6 +105,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.title_text{
+    width: 150px;
 }
 .card-heading h3{
     font-weight: 500;

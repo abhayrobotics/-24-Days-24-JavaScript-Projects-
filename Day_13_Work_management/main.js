@@ -1,27 +1,17 @@
 
-// ? draggable
-let todo = document.getElementById('todo-area')
-new Sortable(todo, {
-    animation: 150,
-    // ghostClass: 'drag'.
-    group:'drag'
-});
-let doing = document.getElementById('doing-area')
-new Sortable(doing, {
-    animation: 150,
-    group:'drag'
-    // ghostClass: 'drag'
-});
+
 
 //? add item
-let counter =5;
-function AddItem() {
-    let new_item = document.getElementById('todo-area');
-    let add = document.getElementById('add')
-    let text = add.previousElementSibling.value;
+let counter = document.querySelectorAll('.add').length;
+console.log(counter)
+function AddItem(id, i) {
+    let new_item = document.getElementById(id);
+    console.log(new_item)
+    let add = document.getElementById(`add${i}`)
+    let text =  add.previousElementSibling.value;
     if (text != "") {
-        document.getElementById('todo-area').innerHTML = new_item.innerHTML +
-         ` <div class="new-item drag">
+        document.getElementById(id).innerHTML = new_item.innerHTML +
+            ` <div class="new-item drag">
               <div class="title">${text}</div>
               <i class="ri-close-circle-fill delete " delete="true" ></i>
           </div>`
@@ -30,6 +20,9 @@ function AddItem() {
     else {
         console.log(text, "wrong")
         let addBar = document.getElementById("card").innerHTML;
+
+        // if noelement prsent
+
         // adding element 
         document.getElementById("card").innerHTML = addBar + ` <div class="warning">Card cannot be blank</div>`;
         // removing element
@@ -39,28 +32,29 @@ function AddItem() {
         }, 2100)
 
     }
-
+    drag();
 }
 
 // ? ***************new list
-function NewList(){
+function NewList() {
+    counter++
     let lists = document.getElementById('lists').innerHTML;
-    document.getElementById('lists').innerHTML = lists +`<div class="card" id="card">
-    <div class="card-heading">
-        <h3>Doing</h3> <i class="ri-draggable"></i>
-    </div>
+    document.getElementById('lists').innerHTML = lists +
+        `<div class="card" id="card">
+            <div class="card-heading">
+                <h3 contenteditable="true" id="text${counter}"  class="title_text" >New Title</h3> <i class="ri-draggable"></i>
+            </div>   
+            <div class="todo-item" id="list${counter}">
+            
+            </div>
 
-    <div class="todo-item" id="doing-area">
-       
-    </div>
+            <div class="add-bar" id="add-bar">
+                <input type="text" name="" class=add_item id="" placeholder="Add new card">
+                <div class="button add" onclick="AddItem('list${counter}',${counter}) " id='add${counter}'>Add</div>
+            </div>
 
-    <div class="add-bar" id="add-bar">
-        <input type="text" name="" class=add_item id="" placeholder="Add new card">
-        <div class="button" onclick="AddItem() " id='add'>Add</div>
-    </div>
-
-</div>`
-
+        </div>`
+    drag()
 }
 // ? ***************cookie save
 // let cookie1 = document.getElementById('cookie')
@@ -71,12 +65,36 @@ function NewList(){
 
 // deleting
 document.onclick = function (e) {
-    
+
     // console.log(e.target)
     // console.log(typeof e.target.getAttribute('delete'));
     // remove parent element
-    if(e.target.getAttribute('delete') == "true"){
+    if (e.target.getAttribute('delete') == "true") {
 
         e.target.parentElement.remove();
     }
 }
+
+
+// ? draggable list item
+drag()
+function drag(){
+
+    console.log(counter);
+    for(let i=1;i<=counter;i++){
+        let item = document.getElementById(`list${i}`)
+        
+        new Sortable(item, {
+            animation: 150,
+            // ghostClass: 'drag'.
+            group: 'drag'
+        });
+    }
+}
+// ? draggable card
+// let doing = document.getElementById('doing-area')
+// new Sortable(doing, {
+//     animation: 150,
+//     group: 'drag'
+//     // ghostClass: 'drag'
+// });
