@@ -9,6 +9,7 @@
     /** background */
     --bg-color: #e1e1e1;
     --bg-color: linear-gradient(90deg, #1d976c, #93f9b9);
+    --bg-color3: linear-gradient(180deg, #1d976c, #93f9b9);
 
     /** card */
     --bg-color2: #f1f2f4;
@@ -37,6 +38,7 @@
 body {
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 
 }
 
@@ -45,7 +47,7 @@ body {
     background: var(--bg-color);
     width: 100vw;
     min-height: 100vh;
-    padding:0rem  1rem;
+    /* padding:0rem  1rem; */
     /* border: 1px solid red; */
     /* display: flex;
      justify-content: center;
@@ -57,9 +59,13 @@ body {
 
 .navbar{
     display: flex;
+    /* grid-template-columns: repeat(7,auto);
+    grid-area: ; */
     justify-content: space-between;
     align-items: center;
-    padding:  0.25rem 1rem;
+   
+    padding:0.5rem  2rem;
+    /* background: var(--bg-color3); */
 }
 .heading {
     font-size: var(--text-big)
@@ -68,10 +74,15 @@ body {
     /* border: 1px solid red; */
     display: flex;
     justify-content: right;
-    align-items: stretch;
+    align-items: center;
     gap: 1rem;
     width: 40%;
+    /* height: fit-content; */
     
+}
+.new-card{
+    text-align: center;
+
 }
 .search-text{
     width: 80%;
@@ -89,7 +100,8 @@ body {
     display: grid;
     grid-template-rows: repeat(4,auto-fit);
     /* grid-template-columns: repeat(auto-fit,minmax(270px ,1fr)); */
-    grid-template-columns: repeat(4,minmax(270px ,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(270px,1fr));
+    padding:1rem  1rem;
 }
 /** **************************card */
 
@@ -99,7 +111,7 @@ body {
     /* height: 300px; */
     border-radius: 0.5rem;
     padding: 0.5rem 0.25rem 0.25rem 0.25rem;
-    margin: var(--mg-small);
+    margin: var(--mg-big);
     padding-bottom: 3rem;
     font-size: var(--text-normal);
     position: relative;
@@ -146,13 +158,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 .title{
     padding-right: 0.25rem;
 }
+.ri-draggable{
+    cursor: pointer;
+}
 .delete {
     font-size: var(--text-medium);
     color:var(--delete-color);
+    cursor: pointer;
 }
 
 .add-bar {
@@ -190,6 +207,7 @@ body {
     background-color: var(--box-color);
     cursor: pointer;
     margin: auto;
+    width: inherit;
      box-shadow: 2px 2px 5px var(--shadow);
 }
 .delete-button{
