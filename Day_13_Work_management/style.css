@@ -210,6 +210,18 @@ body {
     width: inherit;
      box-shadow: 2px 2px 5px var(--shadow);
 }
+.button:hover .button:before{
+    content: "a";
+    background-color: red;
+    width: 110px;
+    height: 110px;
+    z-index: 2;
+    position: absolute;
+    top :0px;
+    left: 0px;
+
+
+}
 .delete-button{
     padding: 0.25rem 0.5rem;
     border-radius: 0.5rem;
@@ -252,4 +264,24 @@ body {
         opacity: 0;
     }
 
+}
+@media screen and (max-width:680px) {
+    .nav-options{
+        width: 60%;
+    }
+    
+}
+@media screen and (max-width:400px) {
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start
+    }
+    .nav-options{
+        justify-content: space-between;
+        width: 100%;
+    }
+    .new-card{
+        width: 40%;
+        margin: 0.5rem 0 0 0 ;
+    }
 }
