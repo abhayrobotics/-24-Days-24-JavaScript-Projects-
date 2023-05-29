@@ -3,10 +3,10 @@
 
 //? add item
 let counter = document.querySelectorAll('.add').length;
-console.log(counter)
+// console.log(counter)
 function AddItem(id, i) {
     let new_item = document.getElementById(id);
-    console.log(new_item)
+    // console.log(new_item)
     let add = document.getElementById(`add${i}`)
     let text =  add.previousElementSibling.value;
     if (text != "") {
@@ -19,15 +19,15 @@ function AddItem(id, i) {
     }
     else {
         console.log(text, "wrong")
-        let addBar = document.getElementById("card").innerHTML;
+        let addBar = document.getElementById(`card${i}`).innerHTML;
 
         // if noelement prsent
 
         // adding element 
-        document.getElementById("card").innerHTML = addBar + ` <div class="warning">Card cannot be blank</div>`;
+        document.getElementById(`card${i}`).innerHTML = addBar + ` <div class="warning">Card cannot be blank</div>`;
         // removing element
         setTimeout(function () {
-            document.getElementById("card").innerHTML = addBar;
+            document.getElementById(`card${i}`).innerHTML = addBar;
 
         }, 2100)
 
@@ -40,7 +40,7 @@ function NewList() {
     counter++
     let lists = document.getElementById('lists').innerHTML;
     document.getElementById('lists').innerHTML = lists +
-        `<div class="card" id="card">
+        `<div class="card" id="card${counter}">
             <div class="card-heading">
                 <h3 contenteditable="true" id="text${counter}"  class="title_text" >New Title</h3> <i class="ri-draggable"></i>
             </div>   
@@ -52,6 +52,7 @@ function NewList() {
                 <input type="text" name="" class=add_item id="" placeholder="Add new card">
                 <div class="button add" onclick="AddItem('list${counter}',${counter}) " id='add${counter}'>Add</div>
             </div>
+            <div class=" delete-button" delete="true">Delete List</div>
 
         </div>`
     drag()
@@ -80,7 +81,7 @@ document.onclick = function (e) {
 drag()
 function drag(){
 
-    console.log(counter);
+    // console.log(counter);
     for(let i=1;i<=counter;i++){
         let item = document.getElementById(`list${i}`)
         
@@ -92,9 +93,33 @@ function drag(){
     }
 }
 // ? draggable card
-// let doing = document.getElementById('doing-area')
-// new Sortable(doing, {
-//     animation: 150,
-//     group: 'drag'
-//     // ghostClass: 'drag'
-// });
+const list = document.getElementById('lists')
+new Sortable(lists, {
+    swapThreshold: 1,
+    animation: 150
+});
+
+// !search
+function Search() {
+    let input, filter, item, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    // console.log(filter)
+    item = document.getElementById("new-item");
+    li = document.getElementsByClassName("title");
+    // console.log(li)
+    for (i = 0; i < li.length; i++) {
+        // console.log(filter)
+        a = li[i];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            // console.log(li[i].parentElement);
+            li[i].parentElement.style.display = "";
+        } else {
+            li[i].parentElement.style.display = "none";
+            // console.log(li[i].parentElement.parentElement);
+        //    ( li[i].parentElement.parentElement.parentElement).style.display = "none";
+
+        }
+    }
+}

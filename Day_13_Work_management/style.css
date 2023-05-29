@@ -19,6 +19,7 @@
     --box-color: #1d976c;
     --font-color: #1e1e1e;
     --shadow: #b1b1b1;
+    --delete-color : rgb(187, 16, 16);
 
 
     /** margin and padding */
@@ -45,7 +46,7 @@ body {
     width: 100vw;
     min-height: 100vh;
     padding:0rem  1rem;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     /* display: flex;
      justify-content: center;
      align-items: center;
@@ -55,23 +56,25 @@ body {
 /* ********************************* Nav bar */
 
 .navbar{
-     border: 1px solid red;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0.25rem 1rem;
+    padding:  0.25rem 1rem;
 }
 .heading {
     font-size: var(--text-big)
 }
 .nav-options{
-       display: flex;
+    /* border: 1px solid red; */
+    display: flex;
     justify-content: right;
     align-items: stretch;
     gap: 1rem;
+    width: 40%;
     
 }
 .search-text{
+    width: 80%;
      outline: none;
     border: none;
     border-radius: 0.4rem;
@@ -81,21 +84,39 @@ body {
 }
 /** **************************lists */
 .lists{
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-rows: repeat(4,auto-fit);
+    /* grid-template-columns: repeat(auto-fit,minmax(270px ,1fr)); */
+    grid-template-columns: repeat(4,minmax(270px ,1fr));
 }
 /** **************************card */
 
 .card {
     background-color: var(--bg-color2);
-    width: 270px;
+    /* width: 270px; */
     /* height: 300px; */
     border-radius: 0.5rem;
     padding: 0.5rem 0.25rem 0.25rem 0.25rem;
-    margin: var(--mg-big);
+    margin: var(--mg-small);
     padding-bottom: 3rem;
     font-size: var(--text-normal);
+    position: relative;
+    
+    /* animation: animate1 1s linear forwards; */
 
+}
+@keyframes animate1 {
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
 }
 
 .card-heading {
@@ -131,7 +152,7 @@ body {
 }
 .delete {
     font-size: var(--text-medium);
-    color: rgb(187, 16, 16);
+    color:var(--delete-color);
 }
 
 .add-bar {
@@ -171,7 +192,27 @@ body {
     margin: auto;
      box-shadow: 2px 2px 5px var(--shadow);
 }
-
+.delete-button{
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    color: var(--tab-color);
+    font-weight: 500;
+    
+    cursor: pointer;
+    margin:0.5rem;
+    position: absolute;
+    bottom: 0.5rem;
+    /* transform: translateY(2rem); */
+    width: calc(100% - 1.5rem);
+     box-shadow: 2px 2px 5px var(--shadow);
+    background-color:rgb(187, 16, 16);
+    text-align: center ;
+    opacity: 0.5;
+    transition: 0.3s linear;
+}
+.delete-button:hover{
+    opacity: 1;
+}
 .warning {
     padding: 0.25rem 0.5rem;
     position: absolute;

@@ -19,30 +19,30 @@
             <div class="heading">A List</div>
             <div class="nav-options">
                 <div class="button new-card" onclick="NewList()">New List</div>
-                <input type="text" name="" class="search-text" id="">
-                <div class="button search">Search</div>
+                <input type="text" name="" class="search-text" id="myInput" onkeyup="Search()" placeholder="Search for items ...">
+                <!-- <div class="button search">Search</div> -->
             </div>
 
         </nav>
         <div class="lists" id = "lists">
 
 
-            <div class="card" id="card">
+            <div class="card" id="card1">
                 <div class="card-heading">
                     <h3 contenteditable="true"  class="title_text">To Do</h3> <i class="ri-draggable"></i>
                 </div>
 
                 <div class="todo-item" id="list1">
                     <div class="new-item drag">
-                        <div class="title">Online course1</div>
+                        <div class="title">Maze algorithm</div>
                         <i class="ri-close-circle-fill delete " delete="true"></i>
                     </div>
                     <div class="new-item drag">
-                        <div class="title">Online course2</div>
+                        <div class="title">React Course</div>
                         <i class="ri-close-circle-fill delete " delete="true"></i>
                     </div>
                     <div class="new-item drag">
-                        <div class="title">Online course3</div>
+                        <div class="title">Work Mangement App</div>
                         <i class="ri-close-circle-fill delete " delete="true"></i>
                     </div>
 
@@ -54,17 +54,18 @@
                     <input type="text" name="" class=add_item id="" placeholder="Add new card">
                     <div class="button add" onclick="AddItem('list1',1) " id='add1'>Add</div>
                 </div>
+                <div class=" delete-button" delete="true">Delete List</div>
 
             </div>
 
-            <div class="card" id="card">
+            <div class="card" id="card2">
                 <div class="card-heading">
                     <h3 contenteditable="true" class="title_text">Doing</h3> <i class="ri-draggable"></i>
                 </div>
 
                 <div class="todo-item" id="list2">
                     <div class="new-item drag">
-                        <div class="title">Online course1</div>
+                        <div class="title">Sortable JS</div>
                         <i class="ri-close-circle-fill delete " delete="true"></i>
                     </div>
                    
@@ -75,12 +76,11 @@
                     <div class="button add" onclick="AddItem('list2',2)" id='add2'>Add</div>
                     
                 </div>
+                <div class=" delete-button" delete="true">Delete List</div>
 
             </div>
         </div>
-        <!-- <button class="cookie" id="cookie">Cookie</button> -->
-
-
+    
 
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"
