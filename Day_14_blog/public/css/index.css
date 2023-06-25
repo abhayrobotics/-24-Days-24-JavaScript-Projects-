@@ -1,5 +1,9 @@
 :root {
-    --text-color: #1e1e1e;
+    --text-color: #000;
+    --text-color2: #1e1e1e;
+
+    --bg-color:#0298e0;
+    --bg-color2:#f4a82b;
 
     --font-family1 :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* *size */
@@ -19,14 +23,26 @@
 
 a {
     text-decoration: none;
-    color: var(--text-color);
+   
 }
+.title-text{
+    font-size: var(--text-big);
+    font-family: var(--font-family1);
+    color: var(--text-color2);
+    margin-top: 55px;
 
+    padding: 1rem 1rem;
+}
 /*********************** Navbar */
 .navbar {
     display: flex;
-    position: relative;
-    margin: 0.25rem 0.75rem;
+    position: fixed;
+    padding: 0.35rem 1rem;
+    width: 100%;
+    background-color:var(--bg-color);
+    box-shadow: 0px 2px 15px var(--text-color);
+    /* margin-bottom: 55px; */
+    /* border: 1px solid red; */
 }
 
 .nav-item {
@@ -38,15 +54,34 @@ a {
 }
 .heading{
     font-size: var(--text-big);
+    color: var(--text-color);
+}
+.center-block{
+    /* width: 400px; */
+    display: flex;
+    
+    /* border:1px solid red; */
+}
+.right-block{
+    display: flex;
 }
 .item{
     font-size: var(--text-medium);
+    margin: 0 0.5rem;
+    font-weight: 500;
+    transition: transform 0.2s;
+    color: var(--text-color);
+}
+.item:hover{
+   transform: translateY(-3px);
+  /* border-bottom: 3px solid var(--bg-color2); */
+
 }
 
-/* ***************** search */
-.search {
+/* ***************** hero */
+.hero {
     display: flex;
-
+   
 }
 
 .cover {
@@ -55,4 +90,9 @@ a {
     background: url(../img/bg-cover2.jpg);
     background-size: cover;
     background-position: bottom;
+}
+/* recent */
+.recent{
+    /* border: 1px solid red; */
+    display: flex;
 }
