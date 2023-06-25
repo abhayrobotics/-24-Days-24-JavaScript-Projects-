@@ -1,0 +1,17 @@
+{
+  "name": "day_14_blog",
+  "version": "1.0.0",
+  "description": "",
+  
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-fileupload": "^1.4.0",
+    "express.js": "^1.0.0",
+    "nodemon": "^2.0.22"
+  }
+}
