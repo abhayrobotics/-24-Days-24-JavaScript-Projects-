@@ -4,6 +4,7 @@
 
     --bg-color:#0298e0;
     --bg-color2:#f4a82b;
+    --bg-color2:#FFEB3B;
 
     --font-family1 :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* *size */
@@ -29,53 +30,9 @@ a {
     font-size: var(--text-big);
     font-family: var(--font-family1);
     color: var(--text-color2);
-    margin-top: 55px;
+    margin: 55px 0 ;
 
-    padding: 1rem 1rem;
-}
-/*********************** Navbar */
-.navbar {
-    display: flex;
-    position: fixed;
-    padding: 0.35rem 1rem;
-    width: 100%;
-    background-color:var(--bg-color);
-    box-shadow: 0px 2px 15px var(--text-color);
-    /* margin-bottom: 55px; */
-    /* border: 1px solid red; */
-}
-
-.nav-item {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: var(--font-family1);
-}
-.heading{
-    font-size: var(--text-big);
-    color: var(--text-color);
-}
-.center-block{
-    /* width: 400px; */
-    display: flex;
-    
-    /* border:1px solid red; */
-}
-.right-block{
-    display: flex;
-}
-.item{
-    font-size: var(--text-medium);
-    margin: 0 0.5rem;
-    font-weight: 500;
-    transition: transform 0.2s;
-    color: var(--text-color);
-}
-.item:hover{
-   transform: translateY(-3px);
-  /* border-bottom: 3px solid var(--bg-color2); */
-
+    padding: 0rem 1rem;
 }
 
 /* ***************** hero */
