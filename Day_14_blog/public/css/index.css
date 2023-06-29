@@ -1,18 +1,4 @@
-:root {
-    --text-color: #000;
-    --text-color2: #1e1e1e;
-
-    --bg-color:#0298e0;
-    --bg-color2:#f4a82b;
-    --bg-color2:#FFEB3B;
-
-    --font-family1 :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* *size */
-    --text-big: 1.8rem;
-    --text-medium:1.1rem;
-
-
-}
+@import "navbar.css";
 
 
 * {
