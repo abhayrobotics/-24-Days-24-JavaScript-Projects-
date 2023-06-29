@@ -8,7 +8,10 @@
     <title>Write Blog </title>
     <!-- editor -->
     <!-- <link href="node_modules/froala-editor/css/froala_editor.pkgd.min.css" type="text/css" /> -->
-   
+    <!-- firebase auth -->
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+
     <!-- css -->
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/blog.css">
@@ -36,10 +39,10 @@
             <div class="right-block">
 
                 <a href="#">
-                    <div class="item"> Signup </div>
+                    <div class="item" > Signup </div>
                 </a>
                 <a href="#">
-                    <div class="item ">Login </div>
+                    <div class="item "  >Login </div>
                 </a>
             </div>
 
@@ -48,9 +51,9 @@
     </section>
 
     <section class="new__blog">
-        
+
         <div class="cover__photo">
-            
+
             <input class="input__image" type="file" name="location" id="">
             <!-- <div class="save_image">Save</div> -->
         </div>
@@ -65,14 +68,15 @@
         </div>
     </section>
 
-   
-  
-<!-- <script type="text/javascript" src=".node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script> -->
+
+
+    <!-- <script type="text/javascript" src=".node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script> -->
     <!-- <script src="../../node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script> -->
     <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
     <script>
-      CKEDITOR.replace( 'editor1' );
+        CKEDITOR.replace('editor1');
     </script>
+    <script src="../js/firebase.js"></script>
 </body>
 
 </html>
