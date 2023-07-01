@@ -95,3 +95,13 @@
 .login__github{
     background-color: var(--github);
 }
+
+@media screen and (max-width:600px) {
+    .login__component{
+        min-width: calc(100% - 4rem);
+    }
+    .login__section{
+        width: 80%;
+    }
+    
+}
