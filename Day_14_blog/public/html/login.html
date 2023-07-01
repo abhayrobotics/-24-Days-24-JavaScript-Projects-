@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,51 +9,72 @@
 </head>
 
 <body>
-      <!-- Navbar -->
-    
-      <section class="navbar" id="navbar">
+    <!-- Navbar -->
+
+    <section class="navbar" id="navbar">
         <div class="nav-item">
-            
-            <a href="./index.html"><div class="heading">Blog</div></a>
+
+            <a href="./index.html">
+                <div class="heading">Blog</div>
+            </a>
 
             <div class="center-block">
-                <a href="./html/blog.html"><div class="item">Write Blog</div></a>
-                <a href="#recent"><div class="item">Categories</div></a>
-                <a href="#"><div class="item">Search </div></a>
+                <a href="./html/blog.html">
+                    <div class="item">Write Blog</div>
+                </a>
+                <a href="#recent">
+                    <div class="item">Categories</div>
+                </a>
+                <a href="#">
+                    <div class="item">Search </div>
+                </a>
             </div>
             <div class="right-block">
 
-                <a href="./html/login.html"><div class="item" > Signup </div></a>
-                <div class="item " id="login">Login  </div>
+                <a href="./html/login.html">
+                    <div class="item"> Signup </div>
+                </a>
+                <div class="item " id="login">Login </div>
             </div>
 
         </div>
-    
+
     </section>
 
-<!-- login -->
+    <!-- login -->
 
     <section class="background">
         <section class="login__component">
 
-            <div class="heading__text">
+            <!-- <div class="heading__text">
+                Don't have an Account yet ?
+            </div>       -->
+            <div class="login__section">
 
+                <div class="form">
+                    <div class="heading__text">Login</div>
+                    <hr>
+                    <div class="form__text">Email</div>
+                    <input type="email" class="input" name="username" id="" placeholder="Enter email here ...">
+                    <div class="form__text">Password</div>
+                    <input type="text" class="input" name="password" id="" placeholder="Enter Password...">
+
+                    <div class="btn submit">Login</div>
+                </div>
+                <div class="or">Or</div>
+
+                <div class="login__google btn" id=" login">Login By Google</div>
+                <div class="login__facebook btn">Login By facebook</div>
+                <div class="login__github btn">Login By Github</div>
+                <div class="" id="signout"></div>
             </div>
-
-            <div class="form">
-
-            </div>
-
-            <div class="login__google" id=" login"></div>
-            <div class="login__facebook"></div>
-            <div class="login__github"></div>
-            <div class="" id="signout"></div>
 
         </section>
     </section>
 
     <!-- <script src="../js/main.js"></script> -->
     <script type="module" src="../js/firebase.js"></script>
-   <script type="module" src="../js/login.js"></script>
+    <script type="module" src="../js/login.js"></script>
 </body>
+
 </html>

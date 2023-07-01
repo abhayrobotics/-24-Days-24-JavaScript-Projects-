@@ -4,6 +4,12 @@
 :root{
     --login-bg:#f0f2f5;
     --pure-white:#fff;
+
+    --facebook:#3b5998;
+    --google:#DB4437;
+    --github:#4078c0;
+
+
 }
 .background{
     background-color: var(--login-bg);
@@ -27,6 +33,65 @@
     /* border: 1px solid red; */
     border-radius: 10px;
     box-shadow: 5px 5px 20px rgb(0,0,0,0.3);
+    font-family:Var( --font-family1);
+}
+.login__section{
+    /* border: 1px solid red; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.heading__text{
+    font-size: 1.5rem;
+    margin: 0.25rem;
+    /* padding: 2rem; */
+
+}
+.form{
+    padding: 1rem 0.25rem 0.5rem 0.25rem;
+}
+.input{
+    line-height: 1.5rem;
+    font-size: 1rem;
+    padding: 0.25rem;
+    margin: 0 0.25rem;
+    /* border: none; */
+    outline: none;
+    border: 1px solid var(--bg-color);
+    border-radius: 5px;
+    width: 100%;
+
 }
 
+.form__text{
+    font-size: 1.2rem;
+    margin: 0.25rem;
+}
+.or{
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+.btn{
+    /* border: 1px solid red; */
+    color: var(--pure-white);
+    padding: 0.25rem 1rem;
+    border-radius: 5px;
+    margin: 0.25rem;
+    text-align: center;
+    cursor: pointer;
+}
+.submit{
+    background-color: var(--bg-color);
+    margin-top: 0.5rem;
 
+}
+.login__google{
+    background-color: var(--google);
+}
+.login__facebook{
+    background-color: var(--facebook);
+
+}
+.login__github{
+    background-color: var(--github);
+}
