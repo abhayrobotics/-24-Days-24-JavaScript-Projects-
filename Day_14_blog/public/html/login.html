@@ -31,10 +31,10 @@
             </div>
             <div class="right-block">
 
-                <a href="./html/login.html">
-                    <div class="item"> Signup </div>
-                </a>
-                <div class="item " >Login </div>
+               
+                    <div class="item" id="form__signup"> Signup </div>
+               
+                <div class="item "id="form__login" >Login </div>
             </div>
 
         </div>
@@ -50,37 +50,39 @@
                 Don't have an Account yet ?
             </div>       -->
             <div class="login__section">
-
-                <div class="form">
-                    <div class="heading__text">Signup</div>
-                    <!-- <hr> -->
-                    <!-- <div class="form__text">Email</div> -->
-                    <input type="text" class="input" name="Username" id="username" placeholder="Username">
-                    <input type="email" class="input" name="email" id="email" placeholder="Email">
-                    <!-- <div class="form__text">Password</div> -->
-                    <input type="text" class="input" name="password" id="password" placeholder="Password">
-
-                    <div class="btn submit" id="signup">Signup</div>
-                    <!-- <div class="btn submit" id="signup">Login</div> -->
-                </div>
-                <div class="form">
-                    <div class="heading__text">login</div>
+                <div class="two__forms">
                     
-                    <input type="email" class="input" name="email" id="email2" placeholder="Email">
-                    <!-- <div class="form__text">Password</div> -->
-                    <input type="text" class="input" name="password" id="password2" placeholder="Password">
+                    <div class="form form1 "id="form1">
+                        <!-- <hr> -->
+                        <!-- <div class="form__text">Email</div> -->
+                        <div class="heading__text " > Signup </div>
+                        <input type="text" class="input" name="Username" id="username" placeholder="Username">
+                        <input type="email" class="input" name="email" id="email" placeholder="Email">
+                        <!-- <div class="form__text">Password</div> -->
+                        <input type="text" class="input" name="password" id="password" placeholder="Password">
 
-                    <div class="btn submit" id="login">Login</div>
-                    <!-- <div class="btn submit" id="signup">Login</div> -->
+                        <div class="btn submit" id="signup">Signup</div>
+                        <!-- <div class="btn submit" id="signup">Login</div> -->
+                    </div>
+                    <div class="form form2 hide "id="form2">
+                        <div class="heading__text">Login</div>
+
+                        <input type="email" class="input" name="email" id="email2" placeholder="Email">
+                        <!-- <div class="form__text">Password</div> -->
+                        <input type="text" class="input" name="password" id="password2" placeholder="Password">
+
+                        <div class="btn submit" id="login">Login</div>
+                        <!-- <div class="btn submit" id="signup">Login</div> -->
+                    </div>
                 </div>
                 <div class="or">Or</div>
 
                 <div class="login__google btn" id="google">Login By Google</div>
                 <div class="login__facebook btn" id="facebook">Login By facebook</div>
                 <div class="login__github btn" id="github">Login By Github</div>
-                <div class="" id="signout" >Signout</div>
+                <div class="" id="signout">Signout</div>
             </div>
-            
+
 
         </section>
     </section>
@@ -89,6 +91,7 @@
     <script type="module" src="../js/firebase.js"></script>
     <script type="module" src="../js/login.js"></script>
     
+
 </body>
 
 </html>

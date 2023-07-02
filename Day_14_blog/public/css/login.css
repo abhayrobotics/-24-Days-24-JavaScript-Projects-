@@ -45,10 +45,19 @@
     font-size: 1.5rem;
     margin: 0.25rem;
     /* padding: 2rem; */
+    cursor: pointer;
 
+}
+.heading_Form{
+    display: flex;
+    justify-content: space-between;
 }
 .form{
     padding: 1rem 0.25rem 0.5rem 0.25rem;
+}
+.hide{
+    display: none;
+  
 }
 .input{
     line-height: 1.5rem;

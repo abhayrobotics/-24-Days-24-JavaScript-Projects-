@@ -78,6 +78,7 @@ body{
     font-weight: 500;
     transition: transform 0.2s;
     color: var(--text-color);
+    cursor: pointer;
 }
 .item:hover{
    transform: translateY(-3px);
