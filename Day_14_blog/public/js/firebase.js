@@ -2,19 +2,19 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
 import {
-    getAuth, signInWithRedirect, createUserWithEmailAndPassword,
+    getAuth, signInWithRedirect, createUserWithEmailAndPassword, signInWithEmailAndPassword,
     GoogleAuthProvider, getRedirectResult, signInWithPopup, signOut,
     signInWithPopup as signInWithPopupGit, GithubAuthProvider,
     FacebookAuthProvider
 } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
-import { getDatabase } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 
-// Your web app's Firebase configuration
+//************************************************************* */Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyAmN9rGFg3lbqVghJRnKGKJ6O2h1BERx-8",
     authDomain: "blog-auth-5ad60.firebaseapp.com",
@@ -30,11 +30,12 @@ const auth = getAuth(app);
 
 const database = getDatabase(app);
 
-// login with email. and password
-// const auth = getAuth();
+// ************************************************************* Signup with email. and password
+
 let loginWithPassword = document.getElementById('signup');
 
 signup.addEventListener('click', (e) => {
+    let username = document.getElementById('username').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
 
@@ -44,6 +45,11 @@ signup.addEventListener('click', (e) => {
             // Signed in 
             const user = userCredential.user;
             // ...
+            // database loading
+            set(ref(database, 'users/' + user.uid), {
+                username: username,
+                email: email,
+            })
             alert("usercreated")
         })
         .catch((error) => {
@@ -52,7 +58,30 @@ signup.addEventListener('click', (e) => {
             // ..
             alert(errorMessage)
         });
-        console.log(e)
+    console.log(e)
+})
+// ************************************************************* login with email. and password
+login.addEventListener('click', (e) => {
+    let email2 = document.getElementById('email2').value;
+    let password2 = document.getElementById('password2').value;
+
+    signInWithEmailAndPassword(auth, email2, password2)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            // ...
+            const dt = new Date();
+            update(ref(database, 'users/' + user.uid), {
+                username: username,
+               last_login: dt,
+            })
+            alert("user loggin in ", username)
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage)
+        });
 })
 
 // // ? Gmail login
