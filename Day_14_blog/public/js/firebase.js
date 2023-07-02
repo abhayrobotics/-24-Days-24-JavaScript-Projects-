@@ -1,7 +1,8 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getAuth, signInWithRedirect, GoogleAuthProvider, getRedirectResult, signInWithPopup ,signOut} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+import { getAuth, signInWithRedirect, GoogleAuthProvider, getRedirectResult, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -50,12 +51,12 @@ login.addEventListener('click', (e) => {
             // The AuthCredential type that was used.
             const credential = GoogleAuthProvider.credentialFromError(error);
             // ...
-            alert(errorMessage);
+            console.log(errorMessage);
         });
 });
 
 let signout = document.getElementById("signout");
-signout.addEventListener('click',(e)=>{
+signout.addEventListener('click', (e) => {
 
 
     signOut(auth).then(() => {
@@ -64,6 +65,40 @@ signout.addEventListener('click',(e)=>{
     }).catch((error) => {
         // An error happened.
     });
+})
+
+// ? github provider
+import { getAuth as getAuthGit, signInWithPopup as signInWithPopupGit, GithubAuthProvider } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+const gitprovider = new GithubAuthProvider(app);
+
+const gitauth = getAuthGit(app);
+
+let github = document.getElementById('github');
+
+github.addEventListener('click', (e) => {
+
+    signInWithPopupGit(gitauth, gitprovider)
+        .then((result) => {
+            // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+            const credential = GithubAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+
+            // The signed-in user info.
+            const user = result.user;
+            // IdP data available using getAdditionalUserInfo(result)
+           alert("github login")
+            // ...
+        }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.customData.email;
+            // The AuthCredential type that was used.
+            const credential = GithubAuthProvider.credentialFromError(error);
+            alert(errorMessage)
+            // ...
+        });
 })
 
     //? redirect method
