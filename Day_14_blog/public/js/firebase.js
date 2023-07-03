@@ -29,6 +29,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const database = getDatabase(app);
+let login_status = false;
 
 // ************************************************************* Signup with email. and password
 
@@ -43,6 +44,7 @@ signup.addEventListener('click', (e) => {
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
+            login_status = true;
             const user = userCredential.user;
             // ...
             // database loading
@@ -68,6 +70,7 @@ login.addEventListener('click', (e) => {
     signInWithEmailAndPassword(auth, email2, password2)
         .then((userCredential) => {
             // Signed in 
+            login_status = true;
             const user = userCredential.user;
             // ...
             const dt = new Date();
@@ -84,7 +87,7 @@ login.addEventListener('click', (e) => {
         });
 })
 
-// ? Gmail login
+// ? ***********************************************************Gmail login
 const provider = new GoogleAuthProvider(app);
 let google = document.getElementById('google');
 
@@ -99,10 +102,15 @@ google.addEventListener('click', (e) => {
             const token = credential.accessToken;
             // The signed-in user info.
             const user = result.user;
+            login_status = true;
+
+            UserInfo(user);
+            AddingUser(user,login_status);
+           
             // IdP data available using getAdditionalUserInfo(result)
             // ...
 
-            alert(user.displayName, user.email);
+            alert(user.displayName);
             console.log("sign in successful");
         }).catch((error) => {
             // Handle Errors here.
@@ -197,7 +205,8 @@ facebook.addEventListener('click', (e) => {
             alert(errorMessage)
         });
 })
-// Signup login
+
+// ****************************************************Signup login button
 
 const form__signup = document.getElementById("form__signup");
 form__signup.addEventListener('click', () => {
@@ -217,6 +226,34 @@ form__login.addEventListener('click', () => {
     
 
 })
+
+function UserInfo(user){
+    let info = {
+        username : user.displayName,
+        email : user.email,
+        imgUrl : user.photoURL,
+        login_status: login_status,
+    
+    }
+    console.log(info)
+    module.exports ={info};
+    // window.location.href = "../index.html"
+    window.location.href = "http://localhost:3000/";
+
+    
+}
+function AddingUser(user,login_status){
+    console.log("adding user")
+    let userlogo = document.getElementById('userlogo');
+    
+    login.classList.add('hide');
+    signup.classList.add('hide');
+    userlogo.classList.remove('hide');
+    signout.classList.remove('hide');
+
+    userlogo.innerText = user.displayName;
+}
+
 
     //? redirect method
 //     signInWithRedirect(auth, provider);
