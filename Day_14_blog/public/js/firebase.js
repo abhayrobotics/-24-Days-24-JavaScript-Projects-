@@ -33,7 +33,7 @@ let login_status = false;
 
 // ************************************************************* Signup with email. and password
 
-let loginWithPassword = document.getElementById('signup');
+let loginWithPassword1 = document.getElementById('signup');
 
 signup.addEventListener('click', (e) => {
     let username = document.getElementById('username').value;
@@ -236,12 +236,14 @@ function UserInfo(user){
     
     }
     console.log(info)
-    module.exports ={info};
+    
     // window.location.href = "../index.html"
     window.location.href = "http://localhost:3000/";
-
+    
+    
     
 }
+export const info = "Abhay"
 function AddingUser(user,login_status){
     console.log("adding user")
     let userlogo = document.getElementById('userlogo');

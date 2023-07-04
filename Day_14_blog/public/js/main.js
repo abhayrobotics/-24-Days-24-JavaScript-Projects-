@@ -5,10 +5,17 @@
 // export const navBlock= navbar;
 // // console.log(navBlock)
 // // console.log(typeof navBlock)
-var http = require('http');
-const { info } = require('./firebase');
+// var http = require('http');
+
+// const { info } = require('./firebase');
+
+// import {info} from './firebase.js';
 console.log("check main")
 console.log(info)
+
+
+
+
 
 
 
