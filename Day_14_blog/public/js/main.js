@@ -15,12 +15,3 @@ console.log(info)
 
 
 
-
-
-
-
-
-// // navbar.innerHTML = navbarBlock.innerHTML
-
-
-
