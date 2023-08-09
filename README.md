@@ -34,3 +34,5 @@
 
 ## Day-11 [Music Player](https://abhayrobotics.github.io/-24-Days-24-JavaScript-Projects-/Day_11_Music_player/index.html)
 ![Music Player](https://github.com/abhayrobotics/-24-Days-24-JavaScript-Projects-/assets/58120166/5b9ac6a6-12b5-4bc1-b96b-089fea46f4e3)
+
+## Day-12 Tic Tac Toe Game
